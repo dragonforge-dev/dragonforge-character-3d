@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba1b26hq25roi"]
-
-[ext_resource type="Script" uid="uid://d014wx4jia078" path="res://addons/dragonforge_character_3d/player/player_move_state.gd" id="1_5hybu"]
-
-[node name="Move State" type="Node"]
-script = ExtResource("1_5hybu")
