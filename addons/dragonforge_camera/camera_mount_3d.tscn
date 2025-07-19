@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bft4rl1dm1p3u"]
+
+[ext_resource type="Script" uid="uid://bh7v2n435ry7a" path="res://addons/dragonforge_camera/camera_mount_3d.gd" id="1_avrce"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_arbgk"]
+
+[node name="CameraMount3D" type="Node3D"]
+script = ExtResource("1_avrce")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 2, 0)
+shape = SubResource("SeparationRayShape3D_arbgk")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="Horizontal Pivot" type="Node3D" parent="."]
+
+[node name="Vertical Pivot" type="Node3D" parent="Horizontal Pivot"]

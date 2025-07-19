@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StatResource" load_steps=2 format=3 uid="uid://chmc3kwav37yq"]
+
+[ext_resource type="Script" uid="uid://5yf80g6w8vpf" path="res://addons/dragonforge_character_3d/resources/stat_resource.gd" id="1_1mm6v"]
+
+[resource]
+script = ExtResource("1_1mm6v")
+stat_type = 1
+stat_value = 10.0

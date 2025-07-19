@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d08a0tkn8k54o"]
+
+[ext_resource type="Script" uid="uid://rwje4jy4t7p2" path="res://addons/dragonforge_character_3d/player/player_jump_state.gd" id="1_cpb0m"]
+
+[node name="Jump State" type="Node"]
+script = ExtResource("1_cpb0m")

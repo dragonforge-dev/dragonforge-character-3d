@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rwb2mk1st7sw"]
+
+[ext_resource type="Script" uid="uid://b3ns1fuifaurq" path="res://addons/dragonforge_camera/cameras.gd" id="1_cmnf4"]
+
+[node name="Cameras" type="Node3D"]
+script = ExtResource("1_cmnf4")

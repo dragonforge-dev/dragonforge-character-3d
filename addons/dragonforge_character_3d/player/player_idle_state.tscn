@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqxikpx7fk3q3"]
+
+[ext_resource type="Script" uid="uid://c1thh75h6yiwh" path="res://addons/dragonforge_character_3d/player/player_idle_state.gd" id="1_lfo6b"]
+
+[node name="Idle State" type="Node"]
+script = ExtResource("1_lfo6b")
