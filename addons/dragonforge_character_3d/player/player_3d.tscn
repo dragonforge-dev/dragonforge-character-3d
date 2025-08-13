@@ -128,8 +128,9 @@ states/Use_Item/position = Vector2(434, 207)
 transitions = ["Start", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_5sjg4"), "IdleWalkRun", "Spellcasting", SubResource("AnimationNodeStateMachineTransition_nx6oy"), "Spellcasting", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_xnf3q"), "IdleWalkRun", "Spellcast_Shoot", SubResource("AnimationNodeStateMachineTransition_du1n4"), "Spellcast_Shoot", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_vbr03"), "IdleWalkRun", "Use_Item", SubResource("AnimationNodeStateMachineTransition_mnje6"), "Use_Item", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_4uhw7"), "IdleWalkRun", "Jump_Start", SubResource("AnimationNodeStateMachineTransition_x2ny4"), "Jump_Start", "Jump_Idle", SubResource("AnimationNodeStateMachineTransition_pbu2q"), "Jump_Idle", "Jump_Land", SubResource("AnimationNodeStateMachineTransition_3hsbl"), "Jump_Land", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_v7vyy")]
 graph_offset = Vector2(-8, -150.821)
 
-[node name="Player3D" type="CharacterBody3D"]
+[node name="Player3D" type="CharacterBody3D" node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("1_dv4av")
+animation_tree = NodePath("AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
