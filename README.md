@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Character 3D
 A character controller for 3D characters.
-# Version 0.2
+# Version 0.3
 For use with **Godot 4.4.1.stable** and later.
 # Installation Instructions
 1. Copy the **dragonforge_controller** folder from the **addons** folder into your project's **addons** folder.
@@ -10,17 +10,15 @@ For use with **Godot 4.4.1.stable** and later.
   * ERROR: res://addons/dragonforge_controller/controller.gd:56 - Parse Error: Identifier "Mouse" not declared in the current scope.
   * ERROR: res://addons/dragonforge_controller/controller.gd:59 - Parse Error: Identifier "Gamepad" not declared in the current scope.
   * ERROR: modules/gdscript/gdscript.cpp:3022 - Failed to load script "res://addons/dragonforge_controller/controller.gd" with error "Parse error".
-3. In your project go to **Project -> Project Settings...**
-4. Select the **Plugins** tab.
-5. Check the **On checkbox** under **Enabled** for **Dragonforge Controller**
-6. Press the **Close** button. (If you would like to ensure the errors are gone, go to **Project -> Reload Project**. When the project reloads, the previous errors should no longer appear. (We cannot guarantee your own errors will not still appear.))
-7. In your project go to **Project -> Project Settings...**
-8. Select the **Input Map** tab.
-9. Add a new action named **change_camera**.
-10. Map the action **Joypad Button 8** (right-stick press) and the **C** key. (Or whatever you choose)
-11. Copy the **dragonforge_camera** folder from the **addons** folder into your project's **addons** folder.
-12. Copy the **dragonforge_state_machine** folder from the **addons** folder into your project's **addons** folder.
-13. Copy the **dragonforge_character_3d** folder from the **addons** folder into your project's **addons** folder.
+3. Copy the **dragonforge_camera** folder from the **addons** folder into your project's **addons** folder.
+4. Copy the **dragonforge_state_machine** folder from the **addons** folder into your project's **addons** folder.
+5. Copy the **dragonforge_character_3d** folder from the **addons** folder into your project's **addons** folder.
+6. In your project go to **Project -> Project Settings...**
+7. Select the **Plugins** tab.
+8. Check the **On checkbox** under **Enabled** for **Dragonforge Controller**
+9. Check the **On checkbox** under **Enabled** for **Dragonforge Character 3D**
+10. Press the **Close** button.
+11. Go to **Project -> Reload Project**. When the project reloads, the errors in step 2 should no longer appear and the new controls for movement, jumping and camera control will be enabled. (We cannot guarantee your own errors will not still appear.) 
 
 
 # Usage
