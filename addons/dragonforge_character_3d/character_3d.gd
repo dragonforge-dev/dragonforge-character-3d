@@ -1,11 +1,10 @@
-class_name Character extends CharacterBody3D
+class_name Character3D extends CharacterBody3D
 
 
 const IDLE_WALK_RUN_BLEND_POSITION = "parameters/IdleWalkRun/blend_position"
 
 
 @export var stats: Array[StatResource]
-@export var state_machine: StateMachine
 @export var animation_tree: AnimationTree:
 	set(value):
 		animation_tree = value

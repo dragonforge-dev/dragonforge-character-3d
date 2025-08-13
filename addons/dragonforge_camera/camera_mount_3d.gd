@@ -19,6 +19,7 @@ const HEAD_VISIBILITY_LAYER = 2
 
 
 func _ready() -> void:
+	set_physics_process(false)
 	if first_person:
 		spring_arm_3d.spring_length = 0.0
 		spring_arm_3d.rotation.x = 0.0
@@ -44,7 +45,11 @@ func update_rotation() -> void:
 	apply_rotation()
 	
 	if Controller.get_last_input_type() == Controller.LastInput.KEYBOARD_AND_MOUSE:
-		Controller.look = Vector2.ZERO
+		if not first_person:
+			Controller.look = Vector2.ZERO
+		elif Controller.look > Mouse.sensitivity * Vector2(-0.001, -0.001) \
+		or Controller.look < Mouse.sensitivity * Vector2(0.001, 0.001):
+			Controller.look = Vector2.ZERO
 
 
 func apply_rotation() -> void:

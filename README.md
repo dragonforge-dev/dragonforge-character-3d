@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Character 3D
 A character controller for 3D characters.
-# Version 0.1
+# Version 0.2
 For use with **Godot 4.4.1.stable** and later.
 # Installation Instructions
 1. Copy the **dragonforge_controller** folder from the **addons** folder into your project's **addons** folder.
@@ -21,7 +21,16 @@ For use with **Godot 4.4.1.stable** and later.
 11. Copy the **dragonforge_camera** folder from the **addons** folder into your project's **addons** folder.
 12. Copy the **dragonforge_state_machine** folder from the **addons** folder into your project's **addons** folder.
 13. Copy the **dragonforge_character_3d** folder from the **addons** folder into your project's **addons** folder.
+
+
 # Usage
+## Using the Existing Player
+1. Copy the `res://addons/dragonforge_character_3d/player/player_3d.tscn` file to your project.
+2. Rename the file to `player.tscn`
+3. If you make any changes to the file, inherit from it.
+
+
+## Making Your Own Player
 1. On your **CharacterBody3D** node click **+ Add Child Node...** and select a **Cameras** node.
 2. On your **Cameras** node click **+ Add Child Node...** and add as many **Camera3D** nodes as you like. Configure them however you like. The player will be able to rotate through them at will.
 ## First-Person View Camera

@@ -55,5 +55,7 @@ func inititalize_cameras() -> Array[Node3D]:
 
 ## Makes the passed camera the active camera.
 func change_camera(camera: Node3D) -> void:
+	active_camera.set_physics_process(false)
 	camera.make_current()
+	camera.set_physics_process(true)
 	active_camera = camera
