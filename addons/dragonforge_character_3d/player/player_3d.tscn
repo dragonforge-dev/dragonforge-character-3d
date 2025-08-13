@@ -1,20 +1,12 @@
-[gd_scene load_steps=40 format=3 uid="uid://bf0xn1nu8efx6"]
+[gd_scene load_steps=37 format=3 uid="uid://bf0xn1nu8efx6"]
 
 [ext_resource type="Script" uid="uid://cayhaxw20tdab" path="res://addons/dragonforge_character_3d/player/player_3d.gd" id="1_dv4av"]
-[ext_resource type="Script" uid="uid://5yf80g6w8vpf" path="res://addons/dragonforge_character_3d/resources/stat_resource.gd" id="2_8u0bd"]
-[ext_resource type="Resource" uid="uid://dqdha4ppdu8ox" path="res://addons/dragonforge_character_3d/resources/speed_stat.tres" id="4_888vx"]
 [ext_resource type="PackedScene" uid="uid://rwb2mk1st7sw" path="res://addons/dragonforge_camera/cameras.tscn" id="6_888vx"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="6_qt5xv"]
 [ext_resource type="PackedScene" uid="uid://bft4rl1dm1p3u" path="res://addons/dragonforge_camera/camera_mount_3d.tscn" id="7_888vx"]
 [ext_resource type="Script" uid="uid://d014wx4jia078" path="res://addons/dragonforge_character_3d/player/player_move_state.gd" id="8_2tumd"]
 [ext_resource type="Script" uid="uid://rwje4jy4t7p2" path="res://addons/dragonforge_character_3d/player/player_jump_state.gd" id="9_qt5xv"]
 [ext_resource type="Script" uid="uid://csybbdo4d4ath" path="res://addons/dragonforge_character_3d/character_state_idle.gd" id="10_qt5xv"]
-
-[sub_resource type="Resource" id="Resource_2tumd"]
-script = ExtResource("2_8u0bd")
-stat_type = 1
-stat_value = 5.0
-metadata/_custom_type_script = "uid://5yf80g6w8vpf"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cupu"]
 height = 2.4
@@ -136,11 +128,8 @@ states/Use_Item/position = Vector2(434, 207)
 transitions = ["Start", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_5sjg4"), "IdleWalkRun", "Spellcasting", SubResource("AnimationNodeStateMachineTransition_nx6oy"), "Spellcasting", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_xnf3q"), "IdleWalkRun", "Spellcast_Shoot", SubResource("AnimationNodeStateMachineTransition_du1n4"), "Spellcast_Shoot", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_vbr03"), "IdleWalkRun", "Use_Item", SubResource("AnimationNodeStateMachineTransition_mnje6"), "Use_Item", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_4uhw7"), "IdleWalkRun", "Jump_Start", SubResource("AnimationNodeStateMachineTransition_x2ny4"), "Jump_Start", "Jump_Idle", SubResource("AnimationNodeStateMachineTransition_pbu2q"), "Jump_Idle", "Jump_Land", SubResource("AnimationNodeStateMachineTransition_3hsbl"), "Jump_Land", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_v7vyy")]
 graph_offset = Vector2(-8, -150.821)
 
-[node name="Player3D" type="CharacterBody3D" node_paths=PackedStringArray("rig", "animation_tree")]
+[node name="Player3D" type="CharacterBody3D"]
 script = ExtResource("1_dv4av")
-rig = NodePath("")
-stats = Array[ExtResource("2_8u0bd")]([ExtResource("4_888vx"), SubResource("Resource_2tumd")])
-animation_tree = NodePath("AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
