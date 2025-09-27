@@ -27,22 +27,23 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	update_rotation()
+	_update_rotation()
 
 
+## Make the attached camera the current camera and reset the rotation.
 func make_current() -> void:
-	reset_rotation()
+	_reset_rotation()
 	camera_3d.make_current()
 
 
-func update_rotation() -> void:
+func _update_rotation() -> void:
 	horizontal_pivot.rotate_y(Controller.look.x)
 	vertical_pivot.rotate_x(Controller.look.y)
 	vertical_pivot.rotation.x = clampf(vertical_pivot.rotation.x,
 		deg_to_rad(upwards_rotation_limit),
 		deg_to_rad(downwards_rotation_limit)
 	)
-	apply_rotation()
+	_apply_rotation()
 	
 	if Controller.get_last_input_type() == Controller.LastInput.KEYBOARD_AND_MOUSE:
 		if not first_person:
@@ -52,12 +53,13 @@ func update_rotation() -> void:
 			Controller.look = Vector2.ZERO
 
 
-func apply_rotation() -> void:
-	spring_arm_3d.rotation.y = horizontal_pivot.rotation.y
-	camera_3d.rotation.x = vertical_pivot.rotation.x
-
-
-func reset_rotation() -> void:
+# Resets the x and y rotation of the camera.
+func _reset_rotation() -> void:
 	horizontal_pivot.rotation.y = 0.0
 	vertical_pivot.rotation.x = 0.0
-	apply_rotation()
+	_apply_rotation()
+
+
+func _apply_rotation() -> void:
+	spring_arm_3d.rotation.y = horizontal_pivot.rotation.y
+	camera_3d.rotation.x = vertical_pivot.rotation.x
