@@ -4,3 +4,4 @@
 
 [node name="Controller" type="Node"]
 script = ExtResource("1_36o3i")
+enable_3d_look = true

@@ -1,12 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://8jegjlit6j5q"]
+[gd_scene load_steps=8 format=3 uid="uid://8jegjlit6j5q"]
 
 [ext_resource type="Script" uid="uid://cpbstwbeauyoa" path="res://test/test_area.gd" id="1_bquo7"]
 [ext_resource type="PackedScene" uid="uid://2psmno56twy5" path="res://test/floor_dirt_large.gltf" id="1_hm6su"]
-[ext_resource type="PackedScene" uid="uid://bf0xn1nu8efx6" path="res://addons/dragonforge_character_3d/player/player_3d.tscn" id="2_0c7br"]
-[ext_resource type="PackedScene" uid="uid://cir34yinpdk3t" path="res://test/mage_rig.tscn" id="4_gkkwo"]
+[ext_resource type="PackedScene" uid="uid://cgch8578bl2c7" path="res://addons/dragonforge_character_3d/player/player_3d.tscn" id="2_0c7br"]
+[ext_resource type="PackedScene" uid="uid://b56fy4d5k1gg4" path="res://kay_kit/skins/barbarian_skin.tscn" id="4_gkkwo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gkkwo"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k74sa"]
+sky_material = SubResource("ProceduralSkyMaterial_gkkwo")
+
+[sub_resource type="Environment" id="Environment_ev5te"]
+background_mode = 2
+sky = SubResource("Sky_k74sa")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="TestArea" type="Node3D"]
 script = ExtResource("1_bquo7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ev5te")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
 
 [node name="Floor" type="Node3D" parent="."]
 metadata/_edit_group_ = true
@@ -119,27 +140,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
 [node name="floor_dirt_large37" parent="Floor" instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
-[node name="Player" parent="." node_paths=PackedStringArray("rig") instance=ExtResource("2_0c7br")]
-rig = NodePath("Mage Rig")
+[node name="Player3D" parent="." node_paths=PackedStringArray("skin") instance=ExtResource("2_0c7br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4127183, 0)
+skin = NodePath("BarbarianSkin2")
 
-[node name="Mage Rig" parent="Player" instance=ExtResource("4_gkkwo")]
-
-[node name="Spellbook_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="0"]
-transform = Transform3D(3.039888e-07, 0.964832, 0.26286456, -0.999999, 8.809839e-07, -5.336341e-07, -9.608281e-07, -0.26286468, 0.9648322, 0.5776216, 0.63670504, 0.23787269)
-
-[node name="Spellbook_open_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="1"]
-transform = Transform3D(3.039888e-07, 0.964832, 0.26286456, -0.999999, 8.809839e-07, -5.336341e-07, -9.608281e-07, -0.26286468, 0.9648322, 0.5459854, 0.63670504, 0.12175377)
-
-[node name="1H_Wand_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="2"]
-transform = Transform3D(4.3705336e-07, -0.14989361, 0.9887014, 0.99999917, -9.2106427e-07, -8.642672e-07, 1.3800015e-06, 0.9887014, 0.14989375, -0.49106058, 0.6410296, 0.10659576)
-
-[node name="2H_Staff_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="3"]
-transform = Transform3D(4.3705336e-07, -0.14989361, 0.9887014, 0.99999917, -9.2106427e-07, -8.642672e-07, 1.3800015e-06, 0.9887014, 0.14989375, -0.49106058, 0.6410296, 0.10659576)
-
-[node name="Mage_Hat_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="4"]
-transform = Transform3D(0.9997204, -0.006120252, 0.022841081, 1.3934276e-09, 0.96592575, 0.25881907, -0.023646828, -0.25874674, 0.96565574, -7.4842275e-09, 1.7705008, -1.02479035e-07)
-
-[node name="Mage_Cape_Bone" parent="Player/Mage Rig/Rig/Skeleton3D" index="5"]
-transform = Transform3D(0.9962748, -5.149619e-09, 0.08623545, 5.1304365e-09, 0.99999994, 4.4407827e-10, -0.08623545, 1.4637388e-15, 0.9962748, -1.299697e-08, 1.2022743, -1.01951365e-07)
-
-[editable path="Player/Mage Rig"]
+[node name="BarbarianSkin2" parent="Player3D" instance=ExtResource("4_gkkwo")]

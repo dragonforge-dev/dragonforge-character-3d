@@ -1,7 +1,6 @@
 @icon("res://addons/dragonforge_camera/assets/icons/video-camera-mount.svg")
 class_name CameraMount3D extends Node3D
 
-
 const HEAD_VISIBILITY_LAYER = 2
 
 ## How far up the camera will rotate in degrees.
@@ -10,7 +9,6 @@ const HEAD_VISIBILITY_LAYER = 2
 @export var downwards_rotation_limit: float = 0.0
 ## If true, camera is a first-person camera. Otherwise, third-person.
 @export var first_person: bool = false
-
 
 @onready var spring_arm_3d: SpringArm3D = $SpringArm3D
 @onready var camera_3d: Camera3D = $SpringArm3D/Camera3D

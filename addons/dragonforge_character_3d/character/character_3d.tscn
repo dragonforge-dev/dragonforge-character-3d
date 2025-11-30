@@ -1,0 +1,90 @@
+[gd_scene load_steps=20 format=3 uid="uid://dmbxr155j26vx"]
+
+[ext_resource type="Script" uid="uid://dmsc43kc5chyq" path="res://addons/dragonforge_character_3d/character/character_3d.gd" id="1_3e1c3"]
+[ext_resource type="Script" uid="uid://b05ex6cpies7y" path="res://addons/dragonforge_character_3d/character/kay_kit_animation_tree.gd" id="2_2h35i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2h35i"]
+height = 2.2
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2h35i"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_2fcve"]
+filter_enabled = true
+filters = ["", "Rig/Skeleton3D:chest", "Rig/Skeleton3D:hand.l", "Rig/Skeleton3D:hand.r", "Rig/Skeleton3D:handslot.l", "Rig/Skeleton3D:handslot.r", "Rig/Skeleton3D:head", "Rig/Skeleton3D:hips", "Rig/Skeleton3D:lowerarm.l", "Rig/Skeleton3D:lowerarm.r", "Rig/Skeleton3D:root", "Rig/Skeleton3D:spine", "Rig/Skeleton3D:upperarm.l", "Rig/Skeleton3D:upperarm.r"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cyjju"]
+animation = &"Block"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_5jdra"]
+filter_enabled = true
+filters = ["Rig/Skeleton3D:chest", "Rig/Skeleton3D:hand.l", "Rig/Skeleton3D:hand.r", "Rig/Skeleton3D:handslot.l", "Rig/Skeleton3D:handslot.r", "Rig/Skeleton3D:head", "Rig/Skeleton3D:hips", "Rig/Skeleton3D:lowerarm.l", "Rig/Skeleton3D:lowerarm.r", "Rig/Skeleton3D:root", "Rig/Skeleton3D:spine", "Rig/Skeleton3D:upperarm.l", "Rig/Skeleton3D:upperarm.r"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5jpmt"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s4c1y"]
+animation = &"Jump_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v1ego"]
+animation = &"Running_A"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4c0v4"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d454b"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ctum"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lispw"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_edh8c"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hl7no"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3t0oe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_m1o3f"]
+states/Idle/node = SubResource("AnimationNodeAnimation_5jpmt")
+states/Idle/position = Vector2(398, 97)
+states/Jump_Idle/node = SubResource("AnimationNodeAnimation_s4c1y")
+states/Jump_Idle/position = Vector2(501, -8)
+states/Running_A/node = SubResource("AnimationNodeAnimation_v1ego")
+states/Running_A/position = Vector2(551, 99)
+transitions = ["Idle", "Running_A", SubResource("AnimationNodeStateMachineTransition_4c0v4"), "Running_A", "Idle", SubResource("AnimationNodeStateMachineTransition_d454b"), "Running_A", "Jump_Idle", SubResource("AnimationNodeStateMachineTransition_3ctum"), "Jump_Idle", "Running_A", SubResource("AnimationNodeStateMachineTransition_lispw"), "Jump_Idle", "Idle", SubResource("AnimationNodeStateMachineTransition_edh8c"), "Idle", "Jump_Idle", SubResource("AnimationNodeStateMachineTransition_hl7no"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3t0oe")]
+graph_offset = Vector2(31, -17)
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3e1c3"]
+graph_offset = Vector2(-621.9339, 43.97371)
+nodes/output/position = Vector2(400, 160)
+nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_m1o3f")
+nodes/MoveStateMachine/position = Vector2(-520, -20)
+nodes/BlockAnimation/node = SubResource("AnimationNodeAnimation_cyjju")
+nodes/BlockAnimation/position = Vector2(-415, 291)
+nodes/BlockBlend/node = SubResource("AnimationNodeBlend2_5jdra")
+nodes/BlockBlend/position = Vector2(-140, 80)
+nodes/AttackOneShot/node = SubResource("AnimationNodeOneShot_2fcve")
+nodes/AttackOneShot/position = Vector2(160, 120)
+nodes/AttackAnimation/node = SubResource("AnimationNodeAnimation_2h35i")
+nodes/AttackAnimation/position = Vector2(-80, 420)
+node_connections = [&"output", 0, &"AttackOneShot", &"BlockBlend", 0, &"MoveStateMachine", &"BlockBlend", 1, &"BlockAnimation", &"AttackOneShot", 0, &"BlockBlend", &"AttackOneShot", 1, &"AttackAnimation"]
+
+[node name="Character3D" type="CharacterBody3D"]
+script = ExtResource("1_3e1c3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_2h35i")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_3e1c3")
+parameters/BlockBlend/blend_amount = 0.0
+parameters/AttackOneShot/active = false
+parameters/AttackOneShot/internal_active = false
+parameters/AttackOneShot/request = 0
+script = ExtResource("2_2h35i")

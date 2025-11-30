@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShieldResource" load_steps=5 format=3 uid="uid://m1gg8r5iualr"]
+
+[ext_resource type="AudioStream" uid="uid://bngwb2jg30r02" path="res://kay_kit/sound/Shield Impact A.wav" id="1_bsfww"]
+[ext_resource type="Script" uid="uid://bjd63c5g1iqbp" path="res://addons/dragonforge_character_3d/resources/shield_resource.gd" id="2_gaej3"]
+[ext_resource type="PackedScene" uid="uid://d4lha2ifo5tgp" path="res://kay_kit/equipment/shields/barbarian_round_shield.tscn" id="2_qfes4"]
+[ext_resource type="Texture2D" uid="uid://b57i1s1nruujn" path="res://kay_kit/icons/barbarian_round_shield_icon.png" id="3_qfes4"]
+
+[resource]
+script = ExtResource("2_gaej3")
+defense = 0.5
+hit_sound = ExtResource("1_bsfww")
+thumbnail = ExtResource("3_qfes4")
+scene = ExtResource("2_qfes4")
+metadata/_custom_type_script = "uid://bjd63c5g1iqbp"

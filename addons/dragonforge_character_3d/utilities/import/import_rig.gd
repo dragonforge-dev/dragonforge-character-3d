@@ -18,6 +18,7 @@ func _post_import(scene):
 
 
 func iterate(node):
+	#Loop Idle, Walking, Running Animations
 	if node is AnimationPlayer:
 		for animation_name in node.get_animation_list():
 			if animation_name.contains("Idle") or animation_name.contains("ing"):
