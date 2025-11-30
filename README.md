@@ -1,13 +1,13 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Character 3D
 A character controller for 3D characters.
-# Version 0.4
+# Version 0.5
 For use with **Godot 4.5.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Camera 3D 0.2.1](https://github.com/dragonforge-dev/dragonforge-camera-3d)
 - [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge State Machine 0.3](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge State Machine 0.4](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the `dragonforge_controller` folder from the `addons` folder into your project's `addons` folder.
 2. Ignore the following errors (they are appearing because the component is not yet enabled):
