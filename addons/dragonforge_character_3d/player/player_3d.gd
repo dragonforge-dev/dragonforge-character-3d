@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_character_3d/assets/textures/icons/player_3d.svg")
 class_name Player3D extends Character3D
 
 ## The speed at which the player turns.

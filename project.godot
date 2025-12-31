@@ -15,7 +15,7 @@ config/description="A character controller for 3D characters."
 config/version="0.5"
 run/main_scene="uid://8jegjlit6j5q"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="uid://mqvf0r3p2nup"
+config/icon="uid://crnae7bbosu7c"
 
 [autoload]
 

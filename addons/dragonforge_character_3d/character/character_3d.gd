@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_character_3d/assets/textures/icons/character_3d.svg")
 class_name Character3D extends CharacterBody3D
 
 

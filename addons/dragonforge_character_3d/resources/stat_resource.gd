@@ -1,4 +1,4 @@
-@icon("res://addons/dragonforge_character_3d/assets/icons/pencil.svg")
+@icon("res://addons/dragonforge_character_3d/assets/textures/icons/pencil.svg")
 class_name StatResource extends Resource
 
 
