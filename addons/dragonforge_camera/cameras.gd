@@ -1,4 +1,4 @@
-@icon("res://addons/dragonforge_camera/assets/icons/video-camera-round.svg")
+@icon("res://addons/dragonforge_camera/assets/textures/icons/video-camera-round.svg")
 class_name Cameras extends Node3D
 
 ## The cameras available to the player. Pressing the change_camera button will

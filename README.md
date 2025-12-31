@@ -1,13 +1,14 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
-# Dragonforge Character 3D
+
+# Dragonforge Character 3D <img src="/addons/dragonforge_character_3d/assets/textures/icons/player_3d.svg" width="32" alt="Character 3D Project Icon"/>
 A character controller for 3D characters.
-# Version 0.5
+# Version 0.5.1
 For use with **Godot 4.5.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Camera 3D 0.2.1](https://github.com/dragonforge-dev/dragonforge-camera-3d)
-- [Dragonforge Controller 0.12](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge State Machine 0.4](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge Camera 3D 0.2.2](https://github.com/dragonforge-dev/dragonforge-camera-3d)
+- [Dragonforge Controller 0.12.1](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge State Machine 0.5](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the `dragonforge_controller` folder from the `addons` folder into your project's `addons` folder.
 2. Ignore the following errors (they are appearing because the component is not yet enabled):
@@ -111,7 +112,7 @@ Now that we have skins, we want to create scenes for all the individual items. L
 You can repeat these steps for any items you want to keep. Alternately, you can just copy and paste the objects back in place on the model if you like in the appropriate slot. The import script was made to make it easier to swap out characters and mix/match equipment. So there's a little more work to re-equip the characters than just a straight import. However having all the models already loaded means you don't have to search in the `Assets` folder of the zipfile for as many things.
 
 
-## Using the Existing Player
+## Using the Existing Player  <img src="/addons/dragonforge_character_3d/assets/textures/icons/player_3d.svg" width="32" alt="Player Icon"/>
 1. Add the `res://addons/dragonforge_character_3d/player/player_3d.tscn` script to your **CharacterBody3D** node. (It is recommended that if you want to make any changes to the file, to inherit from it.)
 
 

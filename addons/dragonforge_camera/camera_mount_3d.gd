@@ -1,4 +1,4 @@
-@icon("res://addons/dragonforge_camera/assets/icons/video-camera-mount.svg")
+@icon("res://addons/dragonforge_camera/assets/textures/icons/video-camera-mount.svg")
 class_name CameraMount3D extends Node3D
 
 const HEAD_VISIBILITY_LAYER = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crb5o4mdxl58f"
-path="res://.godot/imported/state_icon_64x64_white.png-998bbae87d84862ec7ef35ea84c73e74.ctex"
+uid="uid://bf0vhhek8q74h"
+path="res://.godot/imported/mouse.svg-e340ff93e4be6db00bb9a26b22d7b402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/dragonforge_state_machine/assets/icons/state_icon_64x64_white.png"
-dest_files=["res://.godot/imported/state_icon_64x64_white.png-998bbae87d84862ec7ef35ea84c73e74.ctex"]
+source_file="res://addons/dragonforge_controller/assets/textures/icons/mouse.svg"
+dest_files=["res://.godot/imported/mouse.svg-e340ff93e4be6db00bb9a26b22d7b402.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

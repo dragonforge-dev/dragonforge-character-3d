@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Character 3D v0.5"
+config/name="Dragonforge Character 3D v0.5.1"
 config/description="A character controller for 3D characters."
-config/version="0.5"
+config/version="0.5.1"
 run/main_scene="uid://8jegjlit6j5q"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://crnae7bbosu7c"
@@ -26,7 +26,7 @@ Controller="*res://addons/dragonforge_controller/controller.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dragonforge_character_3d/plugin.cfg", "res://addons/dragonforge_controller/plugin.cfg")
+enabled=PackedStringArray("res://addons/dragonforge_camera/plugin.cfg", "res://addons/dragonforge_character_3d/plugin.cfg", "res://addons/dragonforge_controller/plugin.cfg")
 
 [input]
 
