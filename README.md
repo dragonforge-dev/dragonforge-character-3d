@@ -1,4 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-character-3d?logo=mit)](https://github.com/dragonforge-dev/dragonforge-character-3d/blob/main/LICENSE)
+[![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-character-3d/latest)](https://github.com/dragonforge-dev/dragonforge-character-3d/releases/latest)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-character-3d)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-character-3d)
 
 # Dragonforge Character 3D <img src="/addons/dragonforge_character_3d/assets/textures/icons/player_3d.svg" width="32" alt="Character 3D Project Icon"/>
 A character controller for 3D characters.
