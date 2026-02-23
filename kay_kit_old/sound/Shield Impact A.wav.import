@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bngwb2jg30r02"
+path="res://.godot/imported/Shield Impact A.wav-7e61c288e3ff7c3ff8d61dc9dc3c87cb.sample"
+
+[deps]
+
+source_file="res://kay_kit_old/sound/Shield Impact A.wav"
+dest_files=["res://.godot/imported/Shield Impact A.wav-7e61c288e3ff7c3ff8d61dc9dc3c87cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

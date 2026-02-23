@@ -1,33 +1,30 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.1-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 [![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-character-3d?logo=mit)](https://github.com/dragonforge-dev/dragonforge-character-3d/blob/main/LICENSE)
 [![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-character-3d/latest)](https://github.com/dragonforge-dev/dragonforge-character-3d/releases/latest)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-character-3d)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-character-3d)
 
 # Dragonforge Character 3D <img src="/addons/dragonforge_character_3d/assets/textures/icons/player_3d.svg" width="32" alt="Character 3D Project Icon"/>
 A character controller for 3D characters.
-# Version 0.5.1
-For use with **Godot 4.5.stable** and later.
+# Version 0.6
+For use with **Godot 4.6.1** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Camera 3D 0.2.2](https://github.com/dragonforge-dev/dragonforge-camera-3d)
-- [Dragonforge Controller 0.12.1](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge State Machine 0.5](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge Camera 3D 0.3](https://github.com/dragonforge-dev/dragonforge-camera-3d)
+- [Dragonforge Controller 0.14.5](https://github.com/dragonforge-dev/dragonforge-controller)
+- [Dragonforge State Machine 0.6](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the `dragonforge_controller` folder from the `addons` folder into your project's `addons` folder.
-2. Ignore the following errors (they are appearing because the component is not yet enabled):
-  * ERROR: res://addons/dragonforge_controller/controller.gd:54 - Parse Error: Identifier "Keyboard" not declared in the current scope.
-  * ERROR: res://addons/dragonforge_controller/controller.gd:56 - Parse Error: Identifier "Mouse" not declared in the current scope.
-  * ERROR: res://addons/dragonforge_controller/controller.gd:59 - Parse Error: Identifier "Gamepad" not declared in the current scope.
-  * ERROR: modules/gdscript/gdscript.cpp:3022 - Failed to load script "res://addons/dragonforge_controller/controller.gd" with error "Parse error".
+2. Ignore any errors (they are appearing because the component is not yet enabled).
 3. Copy the `dragonforge_camera` folder from the `addons` folder into your project's `addons` folder.
 4. Copy the `dragonforge_state_machine` folder from the `addons` folder into your project's `addons` folder.
 5. Copy the `dragonforge_character_3d` folder from the `addons` folder into your project's `addons` folder.
 6. In your project go to **Project -> Project Settings...**
 7. Select the **Plugins** tab.
 8. Check the **On checkbox** under **Enabled** for **Dragonforge Controller**
-9. Check the **On checkbox** under **Enabled** for **Dragonforge Character 3D**
-10. Press the **Close** button.
-11. Go to **Project -> Reload Project**. When the project reloads, the errors in step 2 should no longer appear and the new controls for movement, jumping and camera control will be enabled. (We cannot guarantee your own errors will not still appear.) 
+9. Check the **On checkbox** under **Enabled** for **Dragonforge Camera 3D**
+10. Check the **On checkbox** under **Enabled** for **Dragonforge Character 3D**
+11. Press the **Close** button.
+12. Go to **Project -> Reload Project**. When the project reloads, the errors in step 2 should no longer appear and the new controls for movement, jumping and camera control will be enabled. (We cannot guarantee your own errors will not still appear.) 
 
 
 # Usage Instructions

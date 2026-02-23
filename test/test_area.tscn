@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://8jegjlit6j5q"]
+[gd_scene format=3 uid="uid://8jegjlit6j5q"]
 
 [ext_resource type="Script" uid="uid://cpbstwbeauyoa" path="res://test/test_area.gd" id="1_bquo7"]
 [ext_resource type="PackedScene" uid="uid://2psmno56twy5" path="res://test/floor_dirt_large.gltf" id="1_hm6su"]
 [ext_resource type="PackedScene" uid="uid://cgch8578bl2c7" path="res://addons/dragonforge_character_3d/player/player_3d.tscn" id="2_0c7br"]
-[ext_resource type="PackedScene" uid="uid://b56fy4d5k1gg4" path="res://kay_kit/skins/barbarian_skin.tscn" id="4_gkkwo"]
+[ext_resource type="PackedScene" uid="uid://b56fy4d5k1gg4" path="res://kay_kit_old/skins/barbarian_skin.tscn" id="4_gkkwo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gkkwo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,130 +18,130 @@ sky = SubResource("Sky_k74sa")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="TestArea" type="Node3D"]
+[node name="TestArea" type="Node3D" unique_id=230321279]
 script = ExtResource("1_bquo7")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=408917192]
 environment = SubResource("Environment_ev5te")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1637139326]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
-[node name="Floor" type="Node3D" parent="."]
+[node name="Floor" type="Node3D" parent="." unique_id=1434694365]
 metadata/_edit_group_ = true
 
-[node name="floor_dirt_large2" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large2" parent="Floor" unique_id=2075350714 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
-[node name="floor_dirt_large3" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large3" parent="Floor" unique_id=750068811 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 
-[node name="floor_dirt_large4" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large4" parent="Floor" unique_id=1783360672 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="floor_dirt_large5" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large5" parent="Floor" unique_id=1041219410 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
-[node name="floor_dirt_large6" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large6" parent="Floor" unique_id=423955509 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
 
-[node name="floor_dirt_large7" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large7" parent="Floor" unique_id=2045218159 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
 
-[node name="floor_dirt_large8" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large8" parent="Floor" unique_id=2004843566 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
 
-[node name="floor_dirt_large9" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large9" parent="Floor" unique_id=69337726 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
 
-[node name="floor_dirt_large10" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large10" parent="Floor" unique_id=2061046197 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
 
-[node name="floor_dirt_large11" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large11" parent="Floor" unique_id=932779196 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10)
 
-[node name="floor_dirt_large12" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large12" parent="Floor" unique_id=2026958956 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6)
 
-[node name="floor_dirt_large13" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large13" parent="Floor" unique_id=1427727088 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
 
-[node name="floor_dirt_large14" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large14" parent="Floor" unique_id=1024043105 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -2)
 
-[node name="floor_dirt_large15" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large15" parent="Floor" unique_id=483612717 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
 
-[node name="floor_dirt_large16" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large16" parent="Floor" unique_id=1049230382 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 2)
 
-[node name="floor_dirt_large17" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large17" parent="Floor" unique_id=1654267607 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
 
-[node name="floor_dirt_large18" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large18" parent="Floor" unique_id=648596868 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
 
-[node name="floor_dirt_large19" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large19" parent="Floor" unique_id=96091580 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
 
-[node name="floor_dirt_large20" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large20" parent="Floor" unique_id=1339848529 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
 
-[node name="floor_dirt_large21" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large21" parent="Floor" unique_id=476796501 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
 
-[node name="floor_dirt_large22" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large22" parent="Floor" unique_id=1662753119 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
 
-[node name="floor_dirt_large23" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large23" parent="Floor" unique_id=1078037524 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2)
 
-[node name="floor_dirt_large24" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large24" parent="Floor" unique_id=608775894 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
 
-[node name="floor_dirt_large25" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large25" parent="Floor" unique_id=743157766 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
 
-[node name="floor_dirt_large26" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large26" parent="Floor" unique_id=1432629690 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
 
-[node name="floor_dirt_large27" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large27" parent="Floor" unique_id=1849437465 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
 
-[node name="floor_dirt_large28" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large28" parent="Floor" unique_id=488193208 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
 
-[node name="floor_dirt_large29" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large29" parent="Floor" unique_id=1539362181 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
 
-[node name="floor_dirt_large30" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large30" parent="Floor" unique_id=1269669909 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 6)
 
-[node name="floor_dirt_large31" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large31" parent="Floor" unique_id=34852696 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
 
-[node name="floor_dirt_large32" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large32" parent="Floor" unique_id=1613300731 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
 
-[node name="floor_dirt_large33" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large33" parent="Floor" unique_id=197568824 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 10)
 
-[node name="floor_dirt_large34" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large34" parent="Floor" unique_id=1585638971 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
 
-[node name="floor_dirt_large35" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large35" parent="Floor" unique_id=292240969 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
 
-[node name="floor_dirt_large36" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large36" parent="Floor" unique_id=1047455766 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
 
-[node name="floor_dirt_large37" parent="Floor" instance=ExtResource("1_hm6su")]
+[node name="floor_dirt_large37" parent="Floor" unique_id=2103745005 instance=ExtResource("1_hm6su")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
-[node name="Player3D" parent="." node_paths=PackedStringArray("skin") instance=ExtResource("2_0c7br")]
+[node name="Player3D" parent="." unique_id=1376414832 node_paths=PackedStringArray("skin") instance=ExtResource("2_0c7br")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4127183, 0)
 skin = NodePath("BarbarianSkin2")
 
-[node name="BarbarianSkin2" parent="Player3D" instance=ExtResource("4_gkkwo")]
+[node name="BarbarianSkin2" parent="Player3D" unique_id=1197715368 instance=ExtResource("4_gkkwo")]
