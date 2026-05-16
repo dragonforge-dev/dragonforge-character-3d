@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://j01u58uhm0sb"]
+
+[ext_resource type="PackedScene" uid="uid://cei8gwvbhovb0" path="res://addons/dragonforge_character_3d_kay_kit/assets/models/Mannequin.glb" id="1_0crof"]
+
+[node name="MannequinSkin" unique_id=272962543 instance=ExtResource("1_0crof")]
+
+[node name="RightHandSlot" parent="Rig_Medium/Skeleton3D" parent_id_path=PackedInt32Array(558420190) index="7" unique_id=1418553822]
+transform = Transform3D(-3.4918403e-07, -0.9999991, 4.527573e-07, 5.8875344e-07, 3.9324703e-07, 0.9999995, -0.9999995, 2.7840724e-07, 5.3588224e-07, -0.7870073, 1.1067611, -7.253101e-07)
+bone_name = "hand.r"
+bone_idx = 11
+
+[node name="LeftHandSlot" parent="Rig_Medium/Skeleton3D" parent_id_path=PackedInt32Array(558420190) index="8" unique_id=1633263360]
+transform = Transform3D(-2.784026e-07, 0.999999, -3.6335038e-07, -5.3096744e-07, 4.6128986e-07, 0.9999994, 0.9999994, 3.5663743e-07, 6.234486e-07, 0.78700715, 1.1067611, -6.8134943e-07)
+bone_name = "hand.l"
+bone_idx = 16

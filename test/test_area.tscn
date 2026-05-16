@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpbstwbeauyoa" path="res://test/test_area.gd" id="1_bquo7"]
 [ext_resource type="PackedScene" uid="uid://2psmno56twy5" path="res://test/floor_dirt_large.gltf" id="1_hm6su"]
-[ext_resource type="PackedScene" uid="uid://cgch8578bl2c7" path="res://addons/dragonforge_character_3d/player/player_3d.tscn" id="2_0c7br"]
+[ext_resource type="PackedScene" uid="uid://cgch8578bl2c7" path="res://addons/dragonforge_character_3d_kay_kit/characters/player/kay_kit_player_3d.tscn" id="2_0c7br"]
 [ext_resource type="PackedScene" uid="uid://b56fy4d5k1gg4" path="res://kay_kit_old/skins/barbarian_skin.tscn" id="4_gkkwo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gkkwo"]

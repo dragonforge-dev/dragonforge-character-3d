@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b7nlxh0kmdgyc"]
+
+[ext_resource type="PackedScene" uid="uid://c661yi6ml0r1k" path="res://assets/models/accessories/barbarian/axe_1handed.gltf" id="1_ygqsr"]
+
+[node name="Axe 1 Handed" unique_id=822773355 instance=ExtResource("1_ygqsr")]
+
+[node name="axe_1handed" parent="." index="0" unique_id=825456164]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.05)

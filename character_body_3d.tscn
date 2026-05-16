@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cqwrhr6titpi1"]
+
+[ext_resource type="Script" uid="uid://4u3gpahk2alw" path="res://character_body_3d_basic.gd" id="1_c7tqt"]
+[ext_resource type="PackedScene" uid="uid://rwb2mk1st7sw" path="res://addons/dragonforge_camera/cameras.tscn" id="3_obynr"]
+[ext_resource type="PackedScene" uid="uid://j01u58uhm0sb" path="res://addons/dragonforge_character_3d_kay_kit/characters/skins/mannequin_skin.tscn" id="4_c7tqt"]
+[ext_resource type="PackedScene" uid="uid://bft4rl1dm1p3u" path="res://addons/dragonforge_camera/camera_mount_3d.tscn" id="4_jvo56"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1igb4"]
+height = 2.2
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1123689196]
+script = ExtResource("1_c7tqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=992311630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_1igb4")
+
+[node name="Cameras" parent="." unique_id=1933518997 instance=ExtResource("3_obynr")]
+
+[node name="FreeLook" parent="Cameras" unique_id=302646531 instance=ExtResource("4_jvo56")]
+upwards_rotation_limit = -40.0
+downwards_rotation_limit = 15.0
+
+[node name="Follow" parent="Cameras" unique_id=536017668 instance=ExtResource("4_jvo56")]
+
+[node name="Fixed" type="Camera3D" parent="Cameras" unique_id=2101467808]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 7)
+
+[node name="ISO" type="Camera3D" parent="Cameras" unique_id=245289735]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 5.1, 6, 5.5)
+projection = 1
+size = 12.644
+
+[node name="BirdsEye" type="Camera3D" parent="Cameras" unique_id=1519753986]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 1)
+
+[node name="MannequinSkin" parent="." unique_id=272962543 instance=ExtResource("4_c7tqt")]

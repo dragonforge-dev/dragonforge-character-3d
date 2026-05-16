@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cy5grotm4x05p"]
+
+[ext_resource type="Texture2D" uid="uid://bw77rnjpscvy3" path="res://kay_kit/assets/textures/prototype_bits/prototypebits_texture.png" id="1_q8l66"]
+
+[resource]
+resource_name = "prototype_texture"
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_q8l66")
+roughness = 0.4

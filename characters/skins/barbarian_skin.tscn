@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://brywihp42glw2"]
+
+[ext_resource type="PackedScene" uid="uid://dv1x08wqy14nf" path="res://assets/models/characters/adventurers/Barbarian.glb" id="1_7euwe"]
+[ext_resource type="PackedScene" uid="uid://cpiul64y72se2" path="res://characters/accessories/barbarian/shield_round_barbarian.tscn" id="2_lippr"]
+[ext_resource type="PackedScene" uid="uid://b7nlxh0kmdgyc" path="res://characters/accessories/barbarian/axe_1_handed.tscn" id="2_ltaud"]
+
+[node name="BarbarianSkin" unique_id=772605880 instance=ExtResource("1_7euwe")]
+
+[node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(1287313155) index="0" unique_id=1835026119]
+bones/1/position = Vector3(0, 0.39206383, 0)
+bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
+bones/2/rotation = Quaternion(-6.938893e-18, 7.1054274e-15, 4.93038e-32, 1)
+bones/3/rotation = Quaternion(8.271806e-25, 3.7252903e-09, -2.75506e-40, 1)
+bones/4/position = Vector3(0.21200736, 0.13413203, 7.9299625e-08)
+bones/4/rotation = Quaternion(-0.5599063, -0.060880348, -0.6439745, 0.5177794)
+bones/5/rotation = Quaternion(3.7650654e-08, -5.1384802e-08, -0.4947193, 0.8690529)
+bones/7/rotation = Quaternion(-0.32106528, -0.32531866, 0.1457259, 0.8774103)
+bones/8/position = Vector3(-6.936717e-09, 0.096125185, -0.057500005)
+bones/8/rotation = Quaternion(6.9489685e-09, -3.587743e-09, -0.7071068, 0.7071067)
+bones/9/rotation = Quaternion(-5.8060785e-11, -0.031341746, -1.880125e-09, 0.99950874)
+bones/10/position = Vector3(-0.21200737, 0.13413203, 8.6813984e-08)
+bones/10/rotation = Quaternion(-0.6182439, 0.08072865, 0.61801153, 0.47887278)
+bones/11/rotation = Quaternion(2.1687793e-08, 6.223694e-08, 0.5179393, 0.8554175)
+bones/13/rotation = Quaternion(-0.31929126, 0.30052418, -0.22734974, 0.8695117)
+bones/14/position = Vector3(-1.541501e-08, 0.096125126, -0.057499975)
+bones/14/rotation = Quaternion(-9.53579e-10, -4.3147743e-09, 0.7071068, 0.7071067)
+bones/15/position = Vector3(0.17094508, 0.1135872, 1.5994095e-08)
+bones/15/rotation = Quaternion(0.9925089, 0.073577166, -0.09013844, -0.03725043)
+bones/16/rotation = Quaternion(0.16501392, 8.071145e-08, -1.0972214e-07, 0.9862912)
+bones/17/rotation = Quaternion(-0.53554744, -0.12492985, 0.0538403, 0.8334763)
+bones/18/rotation = Quaternion(-5.381821e-06, 0.92025304, -0.391324, 1.328151e-06)
+bones/19/position = Vector3(-0.17094508, 0.11358732, 1.557549e-08)
+bones/19/rotation = Quaternion(0.9973222, -0.029457364, 0.03152927, 0.05904832)
+bones/20/rotation = Quaternion(0.2740081, -6.3812955e-08, 1.927607e-07, 0.9617275)
+bones/21/rotation = Quaternion(-0.5590394, 0.11451276, -0.008627633, 0.82115)
+bones/22/rotation = Quaternion(-8.934892e-05, 0.9202217, -0.3913977, 2.0290998e-05)
+
+[node name="HeadSlot" parent="Rig_Medium/Skeleton3D" index="7" unique_id=841937734]
+transform = Transform3D(0.9997204, -1.4014349e-09, 0.023646597, 1.3934147e-09, 0.99999994, 3.5568634e-10, -0.023646597, -3.226374e-10, 0.9997204, -4.3038546e-09, 1.2278259, 1.5739471e-15)
+
+[node name="RightHandSlot" parent="Rig_Medium/Skeleton3D" index="8" unique_id=1000373227]
+transform = Transform3D(3.0525698e-07, -0.14989437, -0.9887013, -0.9999989, 8.940685e-08, 3.4555764e-08, -3.0008258e-07, 0.9887013, -0.14989465, -0.49106094, 0.6410296, 0.10659539)
+
+[node name="Axe 1 Handed" parent="Rig_Medium/Skeleton3D/RightHandSlot" index="0" unique_id=822773355 instance=ExtResource("2_ltaud")]
+
+[node name="LeftHandSlot" parent="Rig_Medium/Skeleton3D" index="9" unique_id=626725281]
+transform = Transform3D(-6.1197096e-09, 0.26286295, 0.96483237, 0.99999905, -2.9802404e-08, 3.32579e-07, 3.3326728e-07, 0.96483254, -0.26286313, 0.5077683, 0.63670504, -0.01852119)
+
+[node name="Shield Round Barbarian" parent="Rig_Medium/Skeleton3D/LeftHandSlot" index="0" unique_id=309787318 instance=ExtResource("2_lippr")]
+
+[node name="BackSlot" parent="Rig_Medium/Skeleton3D" index="10" unique_id=1529994605]
+transform = Transform3D(0.9962748, -5.1496167e-09, 0.08623532, 5.1304343e-09, 0.99999994, 4.4407705e-10, -0.08623532, 1.8800718e-15, 0.9962748, -2.9196552e-09, 0.9590293, 1.0685902e-15)

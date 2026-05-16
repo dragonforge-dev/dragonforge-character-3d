@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cmrbiqa0utp6u"]
+
+[ext_resource type="PackedScene" uid="uid://bjk30orpx3vt2" path="res://addons/dragonforge_character_3d_kay_kit/assets/models/Mannequin_Large.glb" id="1_v88tp"]
+
+[node name="Mannequin_LargeSkin" unique_id=317999571 instance=ExtResource("1_v88tp")]

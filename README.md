@@ -11,7 +11,7 @@ For use with **Godot 4.6.1** and later.
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Camera 3D 0.3](https://github.com/dragonforge-dev/dragonforge-camera-3d)
 - [Dragonforge Controller 0.14.5](https://github.com/dragonforge-dev/dragonforge-controller)
-- [Dragonforge State Machine 0.6](https://github.com/dragonforge-dev/dragonforge-state-machine)
+- [Dragonforge State Machine 1.1](https://github.com/dragonforge-dev/dragonforge-state-machine)
 # Installation Instructions
 1. Copy the `dragonforge_controller` folder from the `addons` folder into your project's `addons` folder.
 2. Ignore any errors (they are appearing because the component is not yet enabled).
@@ -28,42 +28,191 @@ The following dependencies are included in the addons folder and are required fo
 
 
 # Usage Instructions
-## Importing Models
 There are an infinite number of 3D models you can import. We are going to try and cover some of the free options.
-### KayKit Models
-The [KayKit Adventurer Pack](https://kaylousberg.itch.io/kaykit-adventurers) includes four free player models. If you purchase it, you can get two more. Since KayKit has a ton of models sharing the same rigging, this means we can use the same script and approach to load any KayKit models.
+
+These instructions assume a folder structure where everything is stored in `res://assets`. Some of the scripts assuem this as well. You can move the files wherever you want - but unless you have your own folder structure, just use the recommended folders.
+
+# KayKit Models
+The [KayKit Adventurer Pack](https://kaylousberg.itch.io/kaykit-adventurers) includes four free player models. If you purchase it, you can get three more. Since KayKit has a ton of models sharing the same rigging, this means we can use the same script and approach to load any KayKit models.
 
 ## Importing the Models
-The first thing to do is to import the models. You can do this without a script, but this plugin has a script that handles a number of tasks, including: automatically looping all loopable animations; deleting custom **BoneAttachmentNode3D** nodes and creating generically named ones; moving all the equipment out of the character models but preserving them so you can copy them to their own nodes; rotating the model 180 degrees so it faces the forward (-Z axis); and, simplifies the names of the **MeshInstance3D** nodes.
+The first thing to do is to import the models.
 
 1. Download the pack.
-2. Copy the `Barbarian.glb`, `Knight.glb`, `Mage.glb`, and `Rogue.glb` files to your project.
-3. Find the four `.glb` files in the **FileSystem** area of your editor.
-4. Holding down the Ctrl key (Command on Mac) click on each file to select it. (You want all four `.glb` files selected, but **not** the `.png` files.)
+2. Copy the `Barbarian.glb`, `Knight.glb`, `Mage.glb`, and `Rogue.glb` files to `res://assets/models/characters`.
+3. Find the four `.glb` files in the **File System** area of your editor under `/assets/models/characters`.
+4. Holding down the **Ctrl key** (**Command** on Mac) click on each file to select it. (You want all four `.glb` files selected, but **not** the `.png` files.)
 5. Click on the **Import** tab (next to the **Scene** tab).
 6. Scroll down to the **Import Script** section.
 7. Click on the **Open File** button next to the **Path** text box.
-8. Browse to `res://addons/dragonforge_character_3d/utilities/import/import_kay_kit_character_as_skin.gd`
+8. Browse to `addons/dragonforge_character_3d_kay_kit/utilities/import/import_kay_kit_character_as_skin.gd`
 9. Click the **Open** button.
 10. Click the yellow **Reimport(*)** button.
 11. Wait for all the files to import.
 
-## Creating the Skins
-Now that we have the models imported, we want to utilize the editor to make local copies we can edit of our models. Currently I don't know how to do this through code so it's a manual process.
-1. Create a new **Scene** with a **Node3D** as the root.
-2. Rename the **Node3D** node to **Workspace** an save it. (This scene is a temporary workspace but we don't want to lose anything to a crash while we are working.)
-3. Drag-and-drop the four `.glb` files from FileSystem on top of the **Node3D** node. (You should have four **Node3D** nodes named `BarbarianSkin` etc. under the first node.)
-4. Right-click on the **BarbarianSkin** node and select **Make Local** from the pop-up menu. (The **Open in Editor** button will disappear.)
-5. Expand the **BarbarianSkin** node.
-6. Scroll down and find all the **MeshInstance3D** nodes after the **AnimationPlayer**.
-7. Move these nodes to the **Workspace** root node so they are no longer part of the **BarbarianSkin** node.
-8. Right-click on the **BarbarianSkin** node and select **Save Branch as Scene** from the pop-up menu.
-9. Select a location to save it. (I recommend `res://assets/skins/`, but whatever works for you is fine.)
-10. Press the **Save** button. (The **Open in Editor** button will re-appear once you save the file.)
-11. Repeat steps 3 to 10 for the other three models.
-**NOTE:** Once the skins are created this way, re-importing the model will have no effect on it.
+This process will create materials in `assets/materials/kay_kit_models/` for each model. They are linked to the materials in the models folder. Due to the way import scripts run, we cannot currently move and rename these files by 
 
-## Creating a Shield
+##  Dealing with the Imported Textures
+The import process will create folders `assets/textures/kay_kit_models/` to store all your textures (and alternate textures if you have them).
+
+1. Drag-and-drop the textures in `/assets/models/characters` to `assets/textures/kay_kit_models/`.
+2. Rename the textures to remove the duplicate name. (E.G. Rename `Barbarian_barbarian_texture.png` to `barbarian_texture.png`.)
+3. Delete texture for large models. (E.G.`Barbarian_Large_barbarian_texture.png` is not used and instead uses the standard Barbarian texture.)
+4. Holding down the **Ctrl key** (**Command** on Mac) click on each texture `.png` file to select it.
+5. Click on the **Import** tab (next to the **Scene** tab).
+6. Click on the drop-down next to **Mode** and select **Lossless** from the drop-down.
+7. Click the yellow **Reimport(*)** button.
+
+## Importing Animations
+Animations are already imported to the addon. These instructions are for new animations that get created after this plugin was last updated.
+The [KayKit Character Animations](https://kaylousberg.itch.io/kaykit-character-animations) are free and separate from the models. These instructions assume you want to use all the animations. If you do not, you can remove the animations you do not need.
+
+1. Download the pack.
+2. Copy medium `.glb` animation files from `Rig_Medium` to `res://addons/dragonforge_character_3d_kay_kit/assets/animations/source/medium/`.
+3. Copy medium `.glb` animation files from `Rig_Large` to `res://addons/dragonforge_character_3d_kay_kit/assets/animations/source/large/`.
+4. Holding down the **Ctrl key** (**Command** on Mac) click on each `.glb` animation file to select it.
+5. Click on the **Import** tab (next to the **Scene** tab).
+6. Scroll down to the **Import Script** section.
+7. Click on the **Open File** button next to the **Path** text box.
+8. Browse to `addons/dragonforge_character_3d_kay_kit/utilities/import/import_kay_kit_animations.gd`
+9. Click the **Open** button.
+10. Click the yellow **Reimport(*)** button.
+11. Wait for all the files to import.
+12. If all the folders do not show up, go to **Project -> Reload Project**.
+
+
+## Creating Skins
+Now that we have the models, materials, textures and animations imported, we want to utilize the editor to make local copies we can edit of our models. (Currently I don't know how to do this through code so it's a manual process.)
+
+1. Find a model `.glb` file in **File System** (for example, `Barbarian.glb`).
+2. Right-click on the file and select **New Inherited Scene**.
+3. Press **Ctrl + S** (**Command + S** on Mac).
+4. Navigate to `res://characters/skins`. (Create the folders if they do not exist.)
+5. Press the **Save** button.
+
+This completes the setup of the skin. It can then be used for a player, enemy, or NPC.
+
+
+### Adding AnimationPlayer and AnimationTree to Skins
+This can be done at any time, but is ideally done once a Skin has been added to a **CharacterBody3D**.
+
+**NOTE:** This is included for completeness, but should not be necessary as you can directly use the KayKti Player3D scene.
+
+1. Select the **Root Node** (i.e. for the **Barbarian** it would be named **BarbarinSkin**).
+2. Press **Ctrl + A** (**Command + A** on Mac) to add a Node.
+3. Type "kay" in the **Search Bar**.
+4. Select the **KayKitAnimationPlayer**. (Select the **LargeKayKitAnimationPlayer** for a large model - note that selecting the wrong one may crash Godot.)
+5. Press the **Create** button. (All of the imported animations will automatically be loaded.)
+6. Select the **Root Node** (i.e. for the **Barbarian** it would be named **BarbarinSkin**).
+7. Press **Ctrl + A** (**Command + A** on Mac) to add a Node.
+8. Select the **KayKitAnimationTree**. (Select the **LargeKayKitAnimationTree** for a large model.)
+9. Press the **Create** button.
+10. Press **Ctrl + S** (**Command + S** on Mac).
+
+## Importing Accessories (Weapons, Shileds, etc.)
+This method of importing accessories is focused on the idea that we will have multiple copies of the same item. One for the world, and one for being equipped by characters.
+
+Unfortunately, import scripts have some drawbacks when doing this, and a few clicks makes it possible to have more control of the created object in the end.
+
+For this example, we will be using `axe_1handed` and `shield_round_barbarian`, which are Barbarian accessories.
+
+1. Copy the `axe_1handed.gltf`, `axe_1handed.bin`, `shield_round_barbarian.gltf`, `shield_round_barbarian.bin`, and `barbarian_texture.png` files to `res://assets/models/accessories/barbarian/`.
+2. Find the two `.gltf` file in the **File System** area of your editor under `/assets/models/accessories/barbarian/`.
+3. Holding down the **Ctrl key** (**Command** on Mac) click on each file to select it. (You want both `.gltf` files selected, but **not** the `.png` file.)
+4. Click on the **Import** tab (next to the **Scene** tab).
+5. Scroll down to the **Import Script** section.
+6. Click on the **Open File** button next to the **Path** text box.
+7. Browse to `addons/dragonforge_character_3d_kay_kit/utilities/import/import_accessory.gd`
+8. Click the **Open** button.
+9. Click the yellow **Reimport(*)** button.
+10. Wait for all the files to import.
+
+
+### Creating Equippable Object Scenes
+We need objects that we can equip to characters. To make this simpler, we will create objects that do not collide with the world so that they do not cause collision issues. It is possible to do this through scripting, but that is an exercise left for the reader.
+
+For this example, we will be using `axe_1handed` and `shield_round_barbarian`, which are Barbarian accessories.
+
+1. Find a model `.gltf` file in **File System** (for example, `/assets/models/accessories/barbarian/axe_1handed.gltf`).
+2. Right-click on the file and select **New Inherited Scene**.
+3. Select the **Root Node** (for example, named `Axe 1 Handed 2`).
+4. Click on the node again to edit the name.
+5. Change the name to remove the " 2" at hend end of the name. (for example,  `Axe 1 Handed`.)
+6. Press **Ctrl + S** (**Command + S** on Mac).
+7. Navigate to `res://levels/accessories/barbarian/`. (Create the folders if they do not exist.)
+8. Press the **Save** button.
+
+Repeat these steps for the `barbarian_round_shield`.
+
+#### Axe Additional Steps
+The axe needs a few modifications so that it will show up correctly in the right hand. (To have it show up correctly in the left hand, do not rotate it on the Y-axis, just move it on the Z-axis.)
+1. Select the **MeshInstance3D** node. (Named `axe_1handed`.)
+2. Go to the **Inspector** and open the **Transform** section under the **Node3D** header.
+3. Change the **Z Position** to **0.05**
+4. Change the **Y Rotation** to **180.0**
+5. Press **Ctrl + S** (**Command + S** on Mac) to save the scene.
+
+#### Shield Additional Steps
+
+
+This completes the initial setup of equippable object scenes. Once you get the hang of it, the process will go very quickly.
+
+
+### Creating World Object Scenes
+Now we want to create world object scenes for our axe and shield. These will be used for placeable objects in the game, like in Skyrim or Fallout 4.
+
+For this example, we will be using `axe_1handed` and `shield_round_barbarian`, which are Barbarian accessories.
+
+1. Find a model `.gltf` file in **File System** (for example, `/assets/models/accessories/barbarian/axe_1handed.gltf`).
+2. Right-click on the file and select **New Inherited Scene**.
+3. Select the **Root Node** (for example, named `Axe 1 Handed 2`).
+4. Click on the node again to edit the name.
+5. Change the name to remove the " 2" at the end of the name and add World Object. (for example,  `Axe 1 Handed World Object`.)
+6. Press **Ctrl + S** (**Command + S** on Mac).
+7. Navigate to `res://levels/accessories/barbarian/`. (Create the folders if they do not exist.)
+8. Press the **Save** button.
+9. Right-click the **Root Node** (for example, now named `Axe 1 Handed`).
+10. Select **Clear Inheritance** from the pop-up dropdown menu.
+11. Press the **Clear** button on the warning that pops up. (All this warning means is that if re-import the `.gltf` file, this scene will not be affected.)
+12. Right-click the **Root Node** again.
+23. Select **Change Type...** from the pop-up dropdown menu.
+14.  Type "rigid" in the **Search Bar** at the top of the **Change Type** window.
+15. Select **RigidBody3D**.
+16. Click the **Change** button.
+17. Select the **MeshInstance3D** node. (for example, named `axe_1handed`.)
+18. Ensure you are in **3D View**. (Click the **3D Tab** at the top of the editor window.)
+19. Click the **Mesh Toolbar Button** at the top of the 3D window. (It only appears if a **MeshInstance3D** node is selected and you are in **3D View**.)
+20. Select **Create Collision Shape...** from the drop-down menu that appears.
+21. Select **Sibling** from the **Collision Shape Placement** dropdown. (It should be selected by default.)
+22. Select **Multiple Convex** from the **Collision Shape Type** dropdown.
+23. Click the **Create** button.
+24. Press **Ctrl + S** (**Command + S** on Mac) to save the node changes.
+
+Repeat these steps for the `barbarian_round_shield`. This completes the initial setup of world object scenes. Once you get the hang of it, the process will go very quickly. Now when you drop (or place) these items in a level, they will lie, or bounce around based on their collision shapes.
+
+
+### Creating a Shield World Object Scene
+Now we want to create a scene for our shield. For this example, we will be using `shield_round_barbarian`, which is a Barbarian accessory. (These steps are identical to the steps above for createing a **Weapon Scene**.)
+
+1. Find a model `.gltf` file in **File System** (for example, `/assets/models/accessories/barbarian/shield_round_barbarian.gltf`).
+2. Right-click on the file and select **New Inherited Scene**.
+3. Select the **Root Node** (named `Shield Round Barbarian 2`).
+4. Click on the node again to edit the name.
+5. Change the name to `Shield Round Barbarian`. (Delete the " 2" at the end.)
+6. Select the **MeshInstance3D** node. (Named `shield_round_barbarian`.)
+7. Ensure you are in **3D View**. (Click the **3D Tab** at the top of the editor window.)
+8. Click the **Mesh Toolbar Button** at the top of the 3D window. (It only appears if a **MeshInstance3D** node is selected and you are in **3D View**.)
+9. Select **Create Collision Shape...** from the drop-down menu that appears.
+10. Select **Sibling** from the **Collision Shape Placement** dropdown. (It should be selected by default.)
+11. Select **Multiple Convex** from the **Collision Shape Type** dropdown.
+12. Click the **Create** button.
+13. Press **Ctrl + S** (**Command + S** on Mac).
+14. Navigate to `res://characters/accessories/barbarian/`. (Create the folders if they do not exist.)
+15. Press the **Save** button.
+
+This completes the intial setup of the shield scene. Once you get the hang of it, the process will go very quickly. Now when you drop it in a game, it will bounce around based on its collision shape.
+
+
 Let's create a shield. We've created a **Shield** class and a **ShieldResource** class to get things started.
 1. Find the **Barbarian_Round_Shield** node under our **Workspace** node.
 2. Right-click the **Barbarian_Round_Shield** node and select **Copy**.
@@ -175,3 +324,6 @@ func look_toward_direction(delta: float) -> void:
 	var target := rig.global_transform.looking_at(rig.global_position + direction, Vector3.UP)
 	rig.global_transform = rig.global_transform.interpolate_with(target, 1.0 - exp(-animation_decay * delta))
 ```
+
+# Resources
+These instructions were written in part by using advice from the video [Using KayKit Characters in Godot (Detailed Version)](https://www.youtube.com/watch?v=4p7QaOd8SHE) by Kay Lousberg.

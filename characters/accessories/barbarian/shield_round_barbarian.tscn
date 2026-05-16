@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cpiul64y72se2"]
+
+[ext_resource type="PackedScene" uid="uid://cre55hecdewmf" path="res://assets/models/accessories/barbarian/shield_round_barbarian.gltf" id="1_qq7em"]
+
+[node name="Shield Round Barbarian" unique_id=309787318 instance=ExtResource("1_qq7em")]
+
+[node name="shield_round_barbarian" parent="." index="0" unique_id=1693127176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)

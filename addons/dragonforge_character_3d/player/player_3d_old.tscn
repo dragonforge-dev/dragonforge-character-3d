@@ -1,12 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://bf0xn1nu8efx6"]
+[gd_scene format=3 uid="uid://bf0xn1nu8efx6"]
 
-[ext_resource type="Script" uid="uid://cayhaxw20tdab" path="res://addons/dragonforge_character_3d/player/player_3d.gd" id="1_dv4av"]
+[ext_resource type="Script" uid="uid://cayhaxw20tdab" path="res://addons/dragonforge_character_3d_kay_kit/characters/player/kat_kit_player_3d.gd" id="1_dv4av"]
 [ext_resource type="PackedScene" uid="uid://rwb2mk1st7sw" path="res://addons/dragonforge_camera/cameras.tscn" id="6_888vx"]
 [ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="6_qt5xv"]
 [ext_resource type="PackedScene" uid="uid://bft4rl1dm1p3u" path="res://addons/dragonforge_camera/camera_mount_3d.tscn" id="7_888vx"]
-[ext_resource type="Script" uid="uid://d014wx4jia078" path="res://addons/dragonforge_character_3d/states/player_state_move.gd" id="8_2tumd"]
-[ext_resource type="Script" uid="uid://rwje4jy4t7p2" path="res://addons/dragonforge_character_3d/states/player_state_jump.gd" id="9_qt5xv"]
-[ext_resource type="Script" uid="uid://csybbdo4d4ath" path="res://addons/dragonforge_character_3d/states/character_state_idle.gd" id="10_qt5xv"]
+[ext_resource type="Script" uid="uid://d014wx4jia078" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/move_player_state.gd" id="8_2tumd"]
+[ext_resource type="Script" uid="uid://rwje4jy4t7p2" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/jump_player_state.gd" id="9_qt5xv"]
+[ext_resource type="Script" uid="uid://csybbdo4d4ath" path="res://addons/dragonforge_character_3d_kay_kit/states/character_states/idle_character_state.gd" id="10_qt5xv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cupu"]
 height = 2.4
@@ -128,57 +128,57 @@ states/Use_Item/position = Vector2(434, 207)
 transitions = ["Start", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_5sjg4"), "IdleWalkRun", "Spellcasting", SubResource("AnimationNodeStateMachineTransition_nx6oy"), "Spellcasting", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_xnf3q"), "IdleWalkRun", "Spellcast_Shoot", SubResource("AnimationNodeStateMachineTransition_du1n4"), "Spellcast_Shoot", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_vbr03"), "IdleWalkRun", "Use_Item", SubResource("AnimationNodeStateMachineTransition_mnje6"), "Use_Item", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_4uhw7"), "IdleWalkRun", "Jump_Start", SubResource("AnimationNodeStateMachineTransition_x2ny4"), "Jump_Start", "Jump_Idle", SubResource("AnimationNodeStateMachineTransition_pbu2q"), "Jump_Idle", "Jump_Land", SubResource("AnimationNodeStateMachineTransition_3hsbl"), "Jump_Land", "IdleWalkRun", SubResource("AnimationNodeStateMachineTransition_v7vyy")]
 graph_offset = Vector2(-8, -150.821)
 
-[node name="Player3DOld" type="CharacterBody3D"]
+[node name="Player3DOld" type="CharacterBody3D" unique_id=2006577132]
 script = ExtResource("1_dv4av")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1913286894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("CapsuleShape3D_5cupu")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=504253950]
 tree_root = SubResource("AnimationNodeStateMachine_cooke")
 parameters/IdleWalkRun/blend_position = Vector2(0, -0.001261)
 
-[node name="Cameras" parent="." instance=ExtResource("6_888vx")]
+[node name="Cameras" parent="." unique_id=1733724880 instance=ExtResource("6_888vx")]
 
-[node name="FirstPerson" parent="Cameras" instance=ExtResource("7_888vx")]
+[node name="FirstPerson" parent="Cameras" unique_id=1282014238 instance=ExtResource("7_888vx")]
 upwards_rotation_limit = -15.0
 downwards_rotation_limit = 40.0
 first_person = true
 
-[node name="FreeLook" parent="Cameras" instance=ExtResource("7_888vx")]
+[node name="FreeLook" parent="Cameras" unique_id=1251064871 instance=ExtResource("7_888vx")]
 upwards_rotation_limit = -40.0
 downwards_rotation_limit = 15.0
 
-[node name="Follow" parent="Cameras" instance=ExtResource("7_888vx")]
+[node name="Follow" parent="Cameras" unique_id=1107142516 instance=ExtResource("7_888vx")]
 
-[node name="Fixed" type="Camera3D" parent="Cameras"]
+[node name="Fixed" type="Camera3D" parent="Cameras" unique_id=2080697159]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 7)
 
-[node name="ISO" type="Camera3D" parent="Cameras"]
+[node name="ISO" type="Camera3D" parent="Cameras" unique_id=166649283]
 transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 5.1, 6, 5.5)
 projection = 1
 size = 12.644
 
-[node name="BirdsEye" type="Camera3D" parent="Cameras"]
+[node name="BirdsEye" type="Camera3D" parent="Cameras" unique_id=858058363]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 1)
 
-[node name="Player State Machine" type="Node" parent="."]
+[node name="Player State Machine" type="Node" parent="." unique_id=2144966511]
 script = ExtResource("6_qt5xv")
 metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
 
-[node name="CharacterStateIdle" type="Node" parent="Player State Machine"]
+[node name="CharacterStateIdle" type="Node" parent="Player State Machine" unique_id=1543333406]
 script = ExtResource("10_qt5xv")
 metadata/_custom_type_script = "uid://csybbdo4d4ath"
 
-[node name="PlayerMoveState" type="Node" parent="Player State Machine"]
+[node name="PlayerMoveState" type="Node" parent="Player State Machine" unique_id=1144613113]
 script = ExtResource("8_2tumd")
 metadata/_custom_type_script = "uid://d014wx4jia078"
 
-[node name="PlayerJumpState" type="Node" parent="Player State Machine"]
+[node name="PlayerJumpState" type="Node" parent="Player State Machine" unique_id=1685028493]
 script = ExtResource("9_qt5xv")
 metadata/_custom_type_script = "uid://rwje4jy4t7p2"
 
-[node name="Timer" type="Timer" parent="Player State Machine/PlayerJumpState"]
+[node name="Timer" type="Timer" parent="Player State Machine/PlayerJumpState" unique_id=798245238]
 wait_time = 0.05
 one_shot = true

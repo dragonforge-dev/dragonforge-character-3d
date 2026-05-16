@@ -1,0 +1,411 @@
+[gd_scene format=3 uid="uid://cgch8578bl2c7"]
+
+[ext_resource type="Script" uid="uid://cayhaxw20tdab" path="res://addons/dragonforge_character_3d_kay_kit/characters/player/kat_kit_player_3d.gd" id="2_jxps5"]
+[ext_resource type="PackedScene" uid="uid://rwb2mk1st7sw" path="res://addons/dragonforge_camera/cameras.tscn" id="3_aj2kc"]
+[ext_resource type="PackedScene" uid="uid://bft4rl1dm1p3u" path="res://addons/dragonforge_camera/camera_mount_3d.tscn" id="4_16to2"]
+[ext_resource type="Script" uid="uid://i0o4sv7i7cp0" path="res://addons/dragonforge_state_machine/state_machine.gd" id="5_815vl"]
+[ext_resource type="Script" uid="uid://csybbdo4d4ath" path="res://addons/dragonforge_character_3d_kay_kit/states/character_states/idle_character_state.gd" id="6_xphwa"]
+[ext_resource type="Script" uid="uid://d014wx4jia078" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/move_player_state.gd" id="7_rw6u6"]
+[ext_resource type="Script" uid="uid://c61okgni7tmpg" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/fall_player_state.gd" id="8_0gho4"]
+[ext_resource type="Script" uid="uid://rwje4jy4t7p2" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/jump_player_state.gd" id="8_oy3pm"]
+[ext_resource type="Script" uid="uid://wwng15no0f0q" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/primary_attack_player_state.gd" id="10_0gho4"]
+[ext_resource type="Script" uid="uid://bnpgpviutj5gy" path="res://addons/dragonforge_character_3d_kay_kit/states/player_states/player_state_block.gd" id="10_fs1ts"]
+[ext_resource type="Animation" uid="uid://crk81d2e18wse" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_1h_attack_chop.anim" id="11_054j2"]
+[ext_resource type="Animation" uid="uid://bvpeij3hos7fm" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_1h_attack_jump_chop.anim" id="12_0gho4"]
+[ext_resource type="Animation" uid="uid://cqwvup5do5e6u" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_1h_attack_slice_diagonal.anim" id="13_iss8o"]
+[ext_resource type="Animation" uid="uid://dd13dk7dealu1" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_1h_attack_slice_horizontal.anim" id="14_gxnrv"]
+[ext_resource type="Animation" uid="uid://boas22nt1ahym" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_1h_attack_stab.anim" id="15_jwlmu"]
+[ext_resource type="Animation" uid="uid://bw5g0vrw48td2" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_attack_chop.anim" id="16_f7wre"]
+[ext_resource type="Animation" uid="uid://dtferydjq0mnq" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_attack_slice.anim" id="17_fofa8"]
+[ext_resource type="Animation" uid="uid://bx335p0rk1qmy" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_attack_spin.anim" id="18_n1woa"]
+[ext_resource type="Animation" uid="uid://m6c3jiyd1s68" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_attack_spinning.anim" id="19_aobuo"]
+[ext_resource type="Animation" uid="uid://bcoenwa47hkqy" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_attack_stab.anim" id="20_m0wea"]
+[ext_resource type="Animation" uid="uid://bfwsy3arg3fow" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_2h_idle.anim" id="21_5ndq0"]
+[ext_resource type="Animation" uid="uid://d3rvq1rgb604k" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_block.anim" id="22_atpw3"]
+[ext_resource type="Animation" uid="uid://k4ylt7h3sr5q" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_block_attack.anim" id="23_4u8if"]
+[ext_resource type="Animation" uid="uid://h55br66oja8e" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_block_hit.anim" id="24_pri4p"]
+[ext_resource type="Animation" uid="uid://b3tkve2lqv2p7" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_blocking.anim" id="25_gf6ae"]
+[ext_resource type="Animation" uid="uid://ji5riv4vnyqi" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_dualwield_attack_chop.anim" id="26_v0mpg"]
+[ext_resource type="Animation" uid="uid://dlxpqip80vbpo" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_dualwield_attack_slice.anim" id="27_ep4g1"]
+[ext_resource type="Animation" uid="uid://hq2p7klxkiud" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_dualwield_attack_stab.anim" id="28_e41s6"]
+[ext_resource type="Animation" uid="uid://b57n3q7v1dpo3" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_unarmed_attack_kick.anim" id="29_3700q"]
+[ext_resource type="Animation" uid="uid://b5qs2mb5ci67y" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_unarmed_attack_punch_a.anim" id="30_vdri2"]
+[ext_resource type="Animation" uid="uid://blwx7rnne7x12" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_melee/melee_unarmed_idle.anim" id="31_n44nl"]
+[ext_resource type="Animation" uid="uid://ctgq8ndpktshx" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_1h_aiming.anim" id="32_ftvmo"]
+[ext_resource type="Animation" uid="uid://b77h0dnpvahy" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_1h_reload.anim" id="33_ch6rf"]
+[ext_resource type="Animation" uid="uid://cm3at81aup84m" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_1h_shoot.anim" id="34_loukh"]
+[ext_resource type="Animation" uid="uid://b5g8ulp8p85fg" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_1h_shooting.anim" id="35_b8i48"]
+[ext_resource type="Animation" uid="uid://csov722nx3h67" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_2h_aiming.anim" id="36_8d31g"]
+[ext_resource type="Animation" uid="uid://cc3u7gx24mpkf" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_2h_reload.anim" id="37_neoc7"]
+[ext_resource type="Animation" uid="uid://ce1c8fsx1og5k" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_2h_shoot.anim" id="38_hsiot"]
+[ext_resource type="Animation" uid="uid://4t6n874qo7mq" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_2h_shooting.anim" id="39_cyggx"]
+[ext_resource type="Animation" uid="uid://dkrnxnnbdp7hm" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_aiming_idle.anim" id="40_0x3m4"]
+[ext_resource type="Animation" uid="uid://rfrgfn0akkxm" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_draw.anim" id="41_81xtv"]
+[ext_resource type="Animation" uid="uid://bqgpsoopuog4i" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_draw_up.anim" id="42_65p0e"]
+[ext_resource type="Animation" uid="uid://c4ur4xf88cihp" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_idle.anim" id="43_fswch"]
+[ext_resource type="Animation" uid="uid://bpe422rr0k2ff" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_release.anim" id="44_qohb6"]
+[ext_resource type="Animation" uid="uid://c4iabdm8w8yd" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_bow_release_up.anim" id="45_k4x1r"]
+[ext_resource type="Animation" uid="uid://b7vi5aur235di" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_magic_raise.anim" id="46_vrdsp"]
+[ext_resource type="Animation" uid="uid://by5ea6odanlfh" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_magic_shoot.anim" id="47_ydwja"]
+[ext_resource type="Animation" uid="uid://lfvm8nh8hqyq" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_magic_spellcasting.anim" id="48_863q8"]
+[ext_resource type="Animation" uid="uid://cn3xnpqkqou6c" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_magic_spellcasting_long.anim" id="49_1a2k7"]
+[ext_resource type="Animation" uid="uid://dswwg5k6arm0y" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/combat_ranged/ranged_magic_summon.anim" id="50_8rird"]
+[ext_resource type="Animation" uid="uid://b5lpfqgjfi0up" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/death_a.anim" id="51_b0r8e"]
+[ext_resource type="Animation" uid="uid://c5ihjynyircsq" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/death_a_pose.anim" id="52_evhf5"]
+[ext_resource type="Animation" uid="uid://bo0nqwld0q8rc" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/death_b.anim" id="53_riiqu"]
+[ext_resource type="Animation" uid="uid://d33cdba63rxd2" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/death_b_pose.anim" id="54_yx5ps"]
+[ext_resource type="Animation" uid="uid://b0y1uulmiqx6k" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/hit_a.anim" id="55_y468h"]
+[ext_resource type="Animation" uid="uid://u6x7bbhjb5ge" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/hit_b.anim" id="56_v8stv"]
+[ext_resource type="Animation" uid="uid://nwj76aabd01n" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/idle_a.anim" id="57_wgv4o"]
+[ext_resource type="Animation" uid="uid://celkts0slmvw" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/idle_b.anim" id="58_yqplt"]
+[ext_resource type="Animation" uid="uid://by1fobsmdf0lr" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/interact.anim" id="59_gfp5w"]
+[ext_resource type="Animation" uid="uid://df5obn6m4jv01" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/pick_up.anim" id="60_ioelq"]
+[ext_resource type="Animation" uid="uid://dwehxctbmkqxl" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/spawn_air.anim" id="61_xxvre"]
+[ext_resource type="Animation" uid="uid://d0vwjaecnlba0" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/spawn_ground.anim" id="62_f5aif"]
+[ext_resource type="Animation" uid="uid://bm50rrks44uhe" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/t_pose.anim" id="63_url2e"]
+[ext_resource type="Animation" uid="uid://dwaoksu4fjono" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/throw.anim" id="64_s7vef"]
+[ext_resource type="Animation" uid="uid://bn5wu1tjwqkrn" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/general/use_item.anim" id="65_gu3sq"]
+[ext_resource type="Animation" uid="uid://dv7ahcc5iwj7s" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/crawling.anim" id="66_2sti4"]
+[ext_resource type="Animation" uid="uid://bnrtxrhdd0m2g" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/crouching.anim" id="67_urhbj"]
+[ext_resource type="Animation" uid="uid://db76iw0143hqf" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/dodge_backward.anim" id="68_8gcmj"]
+[ext_resource type="Animation" uid="uid://b1tvfae20yx2t" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/dodge_forward.anim" id="69_kwhd0"]
+[ext_resource type="Animation" uid="uid://d35hu4mgdei67" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/dodge_left.anim" id="70_0n7lt"]
+[ext_resource type="Animation" uid="uid://d2flekmtvnppn" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/dodge_right.anim" id="71_wvict"]
+[ext_resource type="Animation" uid="uid://cybhksuenidws" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/running_holding_bow.anim" id="72_q875p"]
+[ext_resource type="Animation" uid="uid://dt5gbbi2c2k8a" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/running_holding_rifle.anim" id="73_6x0d5"]
+[ext_resource type="Animation" uid="uid://dtkiaq5glyw5a" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/running_strafe_left.anim" id="74_yyosh"]
+[ext_resource type="Animation" uid="uid://loxpmsggefpo" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/running_strafe_right.anim" id="75_efawx"]
+[ext_resource type="Animation" uid="uid://ul23jpqtu8j4" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/sneaking.anim" id="76_dcukj"]
+[ext_resource type="Animation" uid="uid://bp2ncqbhlt4o3" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_advanced/walking_backwards.anim" id="77_7u1g3"]
+[ext_resource type="Animation" uid="uid://c1ang4v1jhoxu" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/jump_full_long.anim" id="78_e76w5"]
+[ext_resource type="Animation" uid="uid://b5dqcw84n42cs" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/jump_full_short.anim" id="79_aobsg"]
+[ext_resource type="Animation" uid="uid://ehqeueo68sb8" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/jump_idle.anim" id="80_omj3l"]
+[ext_resource type="Animation" uid="uid://c1e3j7rkcrrjm" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/jump_land.anim" id="81_its08"]
+[ext_resource type="Animation" uid="uid://c2cn2202ldnnu" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/jump_start.anim" id="82_unsbc"]
+[ext_resource type="Animation" uid="uid://bsbrre0if153y" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/running_a.anim" id="83_nneie"]
+[ext_resource type="Animation" uid="uid://c0meva7rlr6if" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/running_b.anim" id="84_pj4e6"]
+[ext_resource type="Animation" uid="uid://des4hdahj8rsa" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/walking_a.anim" id="85_sin48"]
+[ext_resource type="Animation" uid="uid://c0hqwghutevjk" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/walking_b.anim" id="86_40tij"]
+[ext_resource type="Animation" uid="uid://ul83hqd6l4r3" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/movement_basic/walking_c.anim" id="87_au7af"]
+[ext_resource type="Animation" uid="uid://bts61vi5do31t" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/cheering.anim" id="88_hsy1l"]
+[ext_resource type="Animation" uid="uid://dmi8s3d658v63" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/lie_down.anim" id="89_gbfow"]
+[ext_resource type="Animation" uid="uid://cc8ru3ccx7h4a" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/lie_idle.anim" id="90_pum84"]
+[ext_resource type="Animation" uid="uid://spmmk2b8gj23" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/lie_stand_up.anim" id="91_0ad1s"]
+[ext_resource type="Animation" uid="uid://qb7qfprs3h1k" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/push_ups.anim" id="92_g7h8b"]
+[ext_resource type="Animation" uid="uid://gv2yll50e6sa" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_chair_down.anim" id="93_fycv2"]
+[ext_resource type="Animation" uid="uid://c340277tsjygg" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_chair_idle.anim" id="94_i4njy"]
+[ext_resource type="Animation" uid="uid://t5ufgl1iiftp" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_chair_stand_up.anim" id="95_151h8"]
+[ext_resource type="Animation" uid="uid://bg1j3f1g4w62u" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_floor_down.anim" id="96_xixbk"]
+[ext_resource type="Animation" uid="uid://dvdpw6w328mg6" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_floor_idle.anim" id="97_wrryl"]
+[ext_resource type="Animation" uid="uid://cj7cjyjfmcwfw" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_floor_stand_up.anim" id="98_l777g"]
+[ext_resource type="Animation" uid="uid://oo6unt4sm01f" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/sit_ups.anim" id="99_gw7xx"]
+[ext_resource type="Animation" uid="uid://bioh5vute5ub4" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/simulation/waving.anim" id="100_w5xde"]
+[ext_resource type="Animation" uid="uid://dgc6djctdcqmh" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/experimental_medium_transform.anim" id="101_du686"]
+[ext_resource type="Animation" uid="uid://chjdsntxvpojt" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_awaken_floor.anim" id="102_a875m"]
+[ext_resource type="Animation" uid="uid://dyy8q0u5uyh0k" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_awaken_floor_long.anim" id="103_1oxhx"]
+[ext_resource type="Animation" uid="uid://pyi21jiy50ox" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_awaken_standing.anim" id="104_hvrpp"]
+[ext_resource type="Animation" uid="uid://g43s7hcr212h" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_death.anim" id="105_01nmi"]
+[ext_resource type="Animation" uid="uid://b1i75oadugxn0" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_death_pose.anim" id="106_rqmie"]
+[ext_resource type="Animation" uid="uid://b4sreuj4t10cj" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_death_resurrect.anim" id="107_qg2yq"]
+[ext_resource type="Animation" uid="uid://dv4iqeq8uq86q" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_idle.anim" id="108_ppk6b"]
+[ext_resource type="Animation" uid="uid://badm2jvejb42g" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_inactive_floor_pose.anim" id="109_teeel"]
+[ext_resource type="Animation" uid="uid://bporbksdswqsl" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_inactive_standing_pose.anim" id="110_f2j8b"]
+[ext_resource type="Animation" uid="uid://bldo573leatsd" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_spawn_ground.anim" id="111_mdml7"]
+[ext_resource type="Animation" uid="uid://b4aqk0vjksjw0" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_taunt.anim" id="112_keoam"]
+[ext_resource type="Animation" uid="uid://ddvt4sy3234au" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_taunt_longer.anim" id="113_t0uud"]
+[ext_resource type="Animation" uid="uid://dawjeg5gxovrf" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/special/skeletons_walking.anim" id="114_278ph"]
+[ext_resource type="Animation" uid="uid://bwbr70nmvtoqi" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/chop.anim" id="115_8dd4q"]
+[ext_resource type="Animation" uid="uid://cu088x2qxg0hu" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/chopping.anim" id="116_kofim"]
+[ext_resource type="Animation" uid="uid://ck2n2gvmhdxso" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/dig.anim" id="117_m7hv7"]
+[ext_resource type="Animation" uid="uid://chsdnwcrsr1gn" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/digging.anim" id="118_aocn3"]
+[ext_resource type="Animation" uid="uid://dsf0cpv6vod67" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_bite.anim" id="119_fjjdw"]
+[ext_resource type="Animation" uid="uid://cdtmggd1hjjrw" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_cast.anim" id="120_vgf3n"]
+[ext_resource type="Animation" uid="uid://cf5fwliwsdrge" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_catch.anim" id="121_h53qf"]
+[ext_resource type="Animation" uid="uid://rjp5x5okgfx5" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_idle.anim" id="122_vmhrf"]
+[ext_resource type="Animation" uid="uid://c0a2062vj4hx7" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_reeling.anim" id="123_uimm2"]
+[ext_resource type="Animation" uid="uid://cns0210pib3wo" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_struggling.anim" id="124_xkndr"]
+[ext_resource type="Animation" uid="uid://bsrjpcydsbwo3" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/fishing_tug.anim" id="125_o1fys"]
+[ext_resource type="Animation" uid="uid://bdjlutxmphxvs" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/hammer.anim" id="126_ycci1"]
+[ext_resource type="Animation" uid="uid://daehy300fow16" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/hammering.anim" id="127_s2upw"]
+[ext_resource type="Animation" uid="uid://blevnxdf7ucd5" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/holding_a.anim" id="128_l1h37"]
+[ext_resource type="Animation" uid="uid://c8sxqnr75lme3" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/holding_b.anim" id="129_7lmo7"]
+[ext_resource type="Animation" uid="uid://f2ymr605q8fu" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/holding_c.anim" id="130_yg3g0"]
+[ext_resource type="Animation" uid="uid://jgmtivah40d6" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/lockpick.anim" id="131_hx1gp"]
+[ext_resource type="Animation" uid="uid://t8343r0faqkf" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/lockpicking.anim" id="132_qw157"]
+[ext_resource type="Animation" uid="uid://d30qsy3dubtu2" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/pickaxe.anim" id="133_bwawe"]
+[ext_resource type="Animation" uid="uid://bocysmubrwrp8" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/pickaxing.anim" id="134_wgc53"]
+[ext_resource type="Animation" uid="uid://bys4exwbw27w" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/saw.anim" id="135_vc1ii"]
+[ext_resource type="Animation" uid="uid://belre26hpb6y2" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/sawing.anim" id="136_cq6ev"]
+[ext_resource type="Animation" uid="uid://cd6ra75ihod5j" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/work_a.anim" id="137_p5a78"]
+[ext_resource type="Animation" uid="uid://cedr74h43j1jb" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/work_b.anim" id="138_3ytm1"]
+[ext_resource type="Animation" uid="uid://ck2e0gb8beu2j" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/work_c.anim" id="139_pw6hn"]
+[ext_resource type="Animation" uid="uid://bl3pvegv8umo" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/working_a.anim" id="140_1aavi"]
+[ext_resource type="Animation" uid="uid://bwah5x3mqb4ht" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/working_b.anim" id="141_hb8qc"]
+[ext_resource type="Animation" uid="uid://cswxu3rjmd8px" path="res://addons/dragonforge_character_3d_kay_kit/assets/animations/medium/tools/working_c.anim" id="142_x1m8i"]
+[ext_resource type="Script" uid="uid://1vdj1mko51ka" path="res://addons/dragonforge_character_3d_kay_kit/kay_kit_animation_player.gd" id="143_messv"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://covdosp0kwwj6" path="res://addons/dragonforge_character_3d_kay_kit/assets/resources/animations/kay_kit_animation_node_blend_tree.tres" id="144_i8fh1"]
+[ext_resource type="Script" uid="uid://b05ex6cpies7y" path="res://addons/dragonforge_character_3d_kay_kit/characters/kay_kit_animation_tree.gd" id="145_wnysa"]
+[ext_resource type="PackedScene" uid="uid://brywihp42glw2" path="res://characters/skins/barbarian_skin.tscn" id="146_0gho4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2h35i"]
+height = 2.2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_054j2"]
+_data = {
+&"melee_1h_attack_chop": ExtResource("11_054j2"),
+&"melee_1h_attack_jump_chop": ExtResource("12_0gho4"),
+&"melee_1h_attack_slice_diagonal": ExtResource("13_iss8o"),
+&"melee_1h_attack_slice_horizontal": ExtResource("14_gxnrv"),
+&"melee_1h_attack_stab": ExtResource("15_jwlmu"),
+&"melee_2h_attack_chop": ExtResource("16_f7wre"),
+&"melee_2h_attack_slice": ExtResource("17_fofa8"),
+&"melee_2h_attack_spin": ExtResource("18_n1woa"),
+&"melee_2h_attack_spinning": ExtResource("19_aobuo"),
+&"melee_2h_attack_stab": ExtResource("20_m0wea"),
+&"melee_2h_idle": ExtResource("21_5ndq0"),
+&"melee_block": ExtResource("22_atpw3"),
+&"melee_block_attack": ExtResource("23_4u8if"),
+&"melee_block_hit": ExtResource("24_pri4p"),
+&"melee_blocking": ExtResource("25_gf6ae"),
+&"melee_dualwield_attack_chop": ExtResource("26_v0mpg"),
+&"melee_dualwield_attack_slice": ExtResource("27_ep4g1"),
+&"melee_dualwield_attack_stab": ExtResource("28_e41s6"),
+&"melee_unarmed_attack_kick": ExtResource("29_3700q"),
+&"melee_unarmed_attack_punch_a": ExtResource("30_vdri2"),
+&"melee_unarmed_idle": ExtResource("31_n44nl")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gho4"]
+_data = {
+&"ranged_1h_aiming": ExtResource("32_ftvmo"),
+&"ranged_1h_reload": ExtResource("33_ch6rf"),
+&"ranged_1h_shoot": ExtResource("34_loukh"),
+&"ranged_1h_shooting": ExtResource("35_b8i48"),
+&"ranged_2h_aiming": ExtResource("36_8d31g"),
+&"ranged_2h_reload": ExtResource("37_neoc7"),
+&"ranged_2h_shoot": ExtResource("38_hsiot"),
+&"ranged_2h_shooting": ExtResource("39_cyggx"),
+&"ranged_bow_aiming_idle": ExtResource("40_0x3m4"),
+&"ranged_bow_draw": ExtResource("41_81xtv"),
+&"ranged_bow_draw_up": ExtResource("42_65p0e"),
+&"ranged_bow_idle": ExtResource("43_fswch"),
+&"ranged_bow_release": ExtResource("44_qohb6"),
+&"ranged_bow_release_up": ExtResource("45_k4x1r"),
+&"ranged_magic_raise": ExtResource("46_vrdsp"),
+&"ranged_magic_shoot": ExtResource("47_ydwja"),
+&"ranged_magic_spellcasting": ExtResource("48_863q8"),
+&"ranged_magic_spellcasting_long": ExtResource("49_1a2k7"),
+&"ranged_magic_summon": ExtResource("50_8rird")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iss8o"]
+_data = {
+&"death_a": ExtResource("51_b0r8e"),
+&"death_a_pose": ExtResource("52_evhf5"),
+&"death_b": ExtResource("53_riiqu"),
+&"death_b_pose": ExtResource("54_yx5ps"),
+&"hit_a": ExtResource("55_y468h"),
+&"hit_b": ExtResource("56_v8stv"),
+&"idle_a": ExtResource("57_wgv4o"),
+&"idle_b": ExtResource("58_yqplt"),
+&"interact": ExtResource("59_gfp5w"),
+&"pick_up": ExtResource("60_ioelq"),
+&"spawn_air": ExtResource("61_xxvre"),
+&"spawn_ground": ExtResource("62_f5aif"),
+&"t_pose": ExtResource("63_url2e"),
+&"throw": ExtResource("64_s7vef"),
+&"use_item": ExtResource("65_gu3sq")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gxnrv"]
+_data = {
+&"crawling": ExtResource("66_2sti4"),
+&"crouching": ExtResource("67_urhbj"),
+&"dodge_backward": ExtResource("68_8gcmj"),
+&"dodge_forward": ExtResource("69_kwhd0"),
+&"dodge_left": ExtResource("70_0n7lt"),
+&"dodge_right": ExtResource("71_wvict"),
+&"running_holding_bow": ExtResource("72_q875p"),
+&"running_holding_rifle": ExtResource("73_6x0d5"),
+&"running_strafe_left": ExtResource("74_yyosh"),
+&"running_strafe_right": ExtResource("75_efawx"),
+&"sneaking": ExtResource("76_dcukj"),
+&"walking_backwards": ExtResource("77_7u1g3")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwlmu"]
+_data = {
+&"jump_full_long": ExtResource("78_e76w5"),
+&"jump_full_short": ExtResource("79_aobsg"),
+&"jump_idle": ExtResource("80_omj3l"),
+&"jump_land": ExtResource("81_its08"),
+&"jump_start": ExtResource("82_unsbc"),
+&"running_a": ExtResource("83_nneie"),
+&"running_b": ExtResource("84_pj4e6"),
+&"walking_a": ExtResource("85_sin48"),
+&"walking_b": ExtResource("86_40tij"),
+&"walking_c": ExtResource("87_au7af")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7wre"]
+_data = {
+&"cheering": ExtResource("88_hsy1l"),
+&"lie_down": ExtResource("89_gbfow"),
+&"lie_idle": ExtResource("90_pum84"),
+&"lie_stand_up": ExtResource("91_0ad1s"),
+&"push_ups": ExtResource("92_g7h8b"),
+&"sit_chair_down": ExtResource("93_fycv2"),
+&"sit_chair_idle": ExtResource("94_i4njy"),
+&"sit_chair_stand_up": ExtResource("95_151h8"),
+&"sit_floor_down": ExtResource("96_xixbk"),
+&"sit_floor_idle": ExtResource("97_wrryl"),
+&"sit_floor_stand_up": ExtResource("98_l777g"),
+&"sit_ups": ExtResource("99_gw7xx"),
+&"waving": ExtResource("100_w5xde")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fofa8"]
+_data = {
+&"experimental_medium_transform": ExtResource("101_du686"),
+&"skeletons_awaken_floor": ExtResource("102_a875m"),
+&"skeletons_awaken_floor_long": ExtResource("103_1oxhx"),
+&"skeletons_awaken_standing": ExtResource("104_hvrpp"),
+&"skeletons_death": ExtResource("105_01nmi"),
+&"skeletons_death_pose": ExtResource("106_rqmie"),
+&"skeletons_death_resurrect": ExtResource("107_qg2yq"),
+&"skeletons_idle": ExtResource("108_ppk6b"),
+&"skeletons_inactive_floor_pose": ExtResource("109_teeel"),
+&"skeletons_inactive_standing_pose": ExtResource("110_f2j8b"),
+&"skeletons_spawn_ground": ExtResource("111_mdml7"),
+&"skeletons_taunt": ExtResource("112_keoam"),
+&"skeletons_taunt_longer": ExtResource("113_t0uud"),
+&"skeletons_walking": ExtResource("114_278ph")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1woa"]
+_data = {
+&"chop": ExtResource("115_8dd4q"),
+&"chopping": ExtResource("116_kofim"),
+&"dig": ExtResource("117_m7hv7"),
+&"digging": ExtResource("118_aocn3"),
+&"fishing_bite": ExtResource("119_fjjdw"),
+&"fishing_cast": ExtResource("120_vgf3n"),
+&"fishing_catch": ExtResource("121_h53qf"),
+&"fishing_idle": ExtResource("122_vmhrf"),
+&"fishing_reeling": ExtResource("123_uimm2"),
+&"fishing_struggling": ExtResource("124_xkndr"),
+&"fishing_tug": ExtResource("125_o1fys"),
+&"hammer": ExtResource("126_ycci1"),
+&"hammering": ExtResource("127_s2upw"),
+&"holding_a": ExtResource("128_l1h37"),
+&"holding_b": ExtResource("129_7lmo7"),
+&"holding_c": ExtResource("130_yg3g0"),
+&"lockpick": ExtResource("131_hx1gp"),
+&"lockpicking": ExtResource("132_qw157"),
+&"pickaxe": ExtResource("133_bwawe"),
+&"pickaxing": ExtResource("134_wgc53"),
+&"saw": ExtResource("135_vc1ii"),
+&"sawing": ExtResource("136_cq6ev"),
+&"work_a": ExtResource("137_p5a78"),
+&"work_b": ExtResource("138_3ytm1"),
+&"work_c": ExtResource("139_pw6hn"),
+&"working_a": ExtResource("140_1aavi"),
+&"working_b": ExtResource("141_hb8qc"),
+&"working_c": ExtResource("142_x1m8i")
+}
+
+[node name="KayKit Player3D" type="CharacterBody3D" unique_id=1397647947 node_paths=PackedStringArray("skin", "animation_tree")]
+collision_layer = 2
+script = ExtResource("2_jxps5")
+skin = NodePath("BarbarianSkin")
+animation_tree = NodePath("BarbarianSkin/KayKitAnimationTree")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288374384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_2h35i")
+
+[node name="Cameras" parent="." unique_id=239546657 instance=ExtResource("3_aj2kc")]
+
+[node name="FirstPerson" parent="Cameras" unique_id=221597113 instance=ExtResource("4_16to2")]
+upwards_rotation_limit = -15.0
+downwards_rotation_limit = 40.0
+first_person = true
+
+[node name="FreeLook" parent="Cameras" unique_id=2076407590 instance=ExtResource("4_16to2")]
+upwards_rotation_limit = -40.0
+downwards_rotation_limit = 15.0
+
+[node name="Follow" parent="Cameras" unique_id=827180635 instance=ExtResource("4_16to2")]
+
+[node name="Fixed" type="Camera3D" parent="Cameras" unique_id=321280057]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 6, 7)
+
+[node name="ISO" type="Camera3D" parent="Cameras" unique_id=786317160]
+transform = Transform3D(0.707107, -0.353553, 0.612373, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612373, 5.1, 6, 5.5)
+projection = 1
+size = 12.644
+
+[node name="BirdsEye" type="Camera3D" parent="Cameras" unique_id=1718966634]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 1)
+
+[node name="Player Movement State Machine" type="Node" parent="." unique_id=1227931181]
+script = ExtResource("5_815vl")
+print_state_changes = false
+metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
+
+[node name="IdleCharacterState" type="Node" parent="Player Movement State Machine" unique_id=74373530]
+script = ExtResource("6_xphwa")
+metadata/_custom_type_script = "uid://csybbdo4d4ath"
+
+[node name="MovePlayerState" type="Node" parent="Player Movement State Machine" unique_id=1707748494]
+script = ExtResource("7_rw6u6")
+metadata/_custom_type_script = "uid://d014wx4jia078"
+
+[node name="JumpPlayerState" type="Node" parent="Player Movement State Machine" unique_id=352469652]
+script = ExtResource("8_oy3pm")
+jump_gravity_multiplier = 2.0
+metadata/_custom_type_script = "uid://rwje4jy4t7p2"
+
+[node name="FallPlayerState" type="Node" parent="Player Movement State Machine" unique_id=1074346621]
+script = ExtResource("8_0gho4")
+metadata/_custom_type_script = "uid://c61okgni7tmpg"
+
+[node name="Player Attack State Machine" type="Node" parent="." unique_id=186566732]
+script = ExtResource("5_815vl")
+metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
+
+[node name="PrimaryAttackPlayerState" type="Node" parent="Player Attack State Machine" unique_id=488739152]
+script = ExtResource("10_0gho4")
+metadata/_custom_type_script = "uid://pm014jx7t5y7"
+
+[node name="Player Action State Machine" type="Node" parent="." unique_id=1663381479]
+script = ExtResource("5_815vl")
+metadata/_custom_type_script = "uid://i0o4sv7i7cp0"
+
+[node name="PlayerStateBlock" type="Node" parent="Player Action State Machine" unique_id=2098254297]
+script = ExtResource("10_fs1ts")
+metadata/_custom_type_script = "uid://pm014jx7t5y7"
+
+[node name="BarbarianSkin" parent="." unique_id=772605880 instance=ExtResource("146_0gho4")]
+
+[node name="KayKitAnimationPlayer" type="AnimationPlayer" parent="BarbarianSkin" unique_id=2083243970]
+libraries/combat_melee = SubResource("AnimationLibrary_054j2")
+libraries/combat_ranged = SubResource("AnimationLibrary_0gho4")
+libraries/general = SubResource("AnimationLibrary_iss8o")
+libraries/movement_advanced = SubResource("AnimationLibrary_gxnrv")
+libraries/movement_basic = SubResource("AnimationLibrary_jwlmu")
+libraries/simulation = SubResource("AnimationLibrary_f7wre")
+libraries/special = SubResource("AnimationLibrary_fofa8")
+libraries/tools = SubResource("AnimationLibrary_n1woa")
+script = ExtResource("143_messv")
+metadata/_custom_type_script = "uid://1vdj1mko51ka"
+
+[node name="KayKitAnimationTree" type="AnimationTree" parent="BarbarianSkin" unique_id=424614407]
+tree_root = ExtResource("144_i8fh1")
+anim_player = NodePath("../KayKitAnimationPlayer")
+parameters/BlockBlend/blend_amount = 0.0
+parameters/AttackOneShot/active = false
+parameters/AttackOneShot/internal_active = false
+parameters/AttackOneShot/request = 0
+script = ExtResource("145_wnysa")
+metadata/_custom_type_script = "uid://b05ex6cpies7y"

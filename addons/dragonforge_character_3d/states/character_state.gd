@@ -2,7 +2,7 @@
 class_name CharacterState extends State
 
 ## The Character this CharacterState operates on.
-var character: Node
+var character: KayKitCharacter3D
 
 
 # Assigns a value to character once the state has been activated.

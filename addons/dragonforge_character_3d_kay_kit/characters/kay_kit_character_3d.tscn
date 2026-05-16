@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dmbxr155j26vx"]
+
+[ext_resource type="Script" uid="uid://dmsc43kc5chyq" path="res://addons/dragonforge_character_3d_kay_kit/characters/kay_kit_character_3d.gd" id="1_yvffq"]
+[ext_resource type="PackedScene" uid="uid://j01u58uhm0sb" path="res://addons/dragonforge_character_3d_kay_kit/characters/skins/mannequin_skin.tscn" id="2_6kxqp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2h35i"]
+height = 2.2
+
+[node name="KayKit Character3D" type="CharacterBody3D" unique_id=722938896]
+script = ExtResource("1_yvffq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288374384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_2h35i")
+
+[node name="MannequinSkin" parent="." unique_id=272962543 instance=ExtResource("2_6kxqp")]

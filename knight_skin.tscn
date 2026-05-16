@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://d05pq7afgbmn3"]
+
+[ext_resource type="PackedScene" uid="uid://p4rglwfxlnii" path="res://assets/models/characters/adventurers/Knight.glb" id="1_82mdt"]
+[ext_resource type="Material" uid="uid://bq83hlhfwgyyh" path="res://assets/materials/kay_kit_models/knight_shiny.material" id="3_smuyx"]
+
+[node name="KnightSkin" unique_id=1209348727 instance=ExtResource("1_82mdt")]
+
+[node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(723948229) index="0" unique_id=1986818625]
+bones/1/position = Vector3(0, 0.39206383, 0)
+bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
+bones/2/rotation = Quaternion(-6.938893e-18, 7.1054274e-15, 4.93038e-32, 1)
+bones/3/rotation = Quaternion(8.271806e-25, 3.7252903e-09, -2.75506e-40, 1)
+bones/4/position = Vector3(0.21200736, 0.13413203, 7.9299625e-08)
+bones/4/rotation = Quaternion(-0.5599063, -0.060880356, -0.6439745, 0.5177794)
+bones/5/rotation = Quaternion(3.7650654e-08, -5.1384802e-08, -0.4947193, 0.8690529)
+bones/6/rotation = Quaternion(7.250843e-09, 9.200791e-09, 0.026658095, 0.99964464)
+bones/6/scale = Vector3(0.99999994, 1, 1.0000001)
+bones/7/rotation = Quaternion(-0.32106528, -0.32531866, 0.1457259, 0.8774103)
+bones/8/position = Vector3(-6.936717e-09, 0.096125185, -0.057500005)
+bones/8/rotation = Quaternion(6.9489685e-09, -3.587743e-09, -0.7071068, 0.7071067)
+bones/9/position = Vector3(-0.21200737, 0.13413203, 8.6813984e-08)
+bones/9/rotation = Quaternion(-0.6182439, 0.08072865, 0.61801153, 0.47887278)
+bones/10/rotation = Quaternion(2.1687793e-08, 6.223694e-08, 0.5179393, 0.8554175)
+bones/11/rotation = Quaternion(7.300499e-09, -7.3388096e-09, -0.0266581, 0.99964464)
+bones/11/scale = Vector3(1.0000001, 1, 1)
+bones/12/rotation = Quaternion(-0.31929126, 0.30052418, -0.22734971, 0.8695116)
+bones/13/position = Vector3(-1.541501e-08, 0.096125126, -0.057499975)
+bones/13/rotation = Quaternion(-9.53579e-10, -4.3147743e-09, 0.7071068, 0.7071067)
+bones/14/rotation = Quaternion(-5.8060785e-11, -0.031341746, -1.880125e-09, 0.99950874)
+bones/15/position = Vector3(-0.17094508, 0.11358732, 1.557549e-08)
+bones/15/rotation = Quaternion(0.99732214, -0.029457362, 0.031529266, 0.059048314)
+bones/16/rotation = Quaternion(0.2740081, -6.3812955e-08, 1.927607e-07, 0.9617275)
+bones/17/rotation = Quaternion(-0.5590394, 0.11451276, -0.008627633, 0.82115)
+bones/18/rotation = Quaternion(-8.934892e-05, 0.9202217, -0.3913977, 2.0290998e-05)
+bones/19/position = Vector3(0.17094508, 0.1135872, 1.5994095e-08)
+bones/19/rotation = Quaternion(0.99618554, 0.047913633, 0.056642693, -0.045938957)
+bones/20/rotation = Quaternion(0.16501394, 6.49408e-08, -1.11406955e-07, 0.9862913)
+bones/21/rotation = Quaternion(-0.53372866, -0.26089525, -1.7298482e-05, 0.80440503)
+bones/22/rotation = Quaternion(0.00026347244, 0.9202156, -0.39141193, -5.963906e-05)
+
+[node name="Knight_ArmLeft" parent="Rig_Medium/Skeleton3D" index="0" unique_id=717528553]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_ArmRight" parent="Rig_Medium/Skeleton3D" index="1" unique_id=2134237575]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_Body" parent="Rig_Medium/Skeleton3D" index="2" unique_id=1816697589]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_Helmet" parent="Rig_Medium/Skeleton3D" index="5" unique_id=1817600859]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_HelmetVisor" parent="Rig_Medium/Skeleton3D" index="6" unique_id=1070980446]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_LegLeft" parent="Rig_Medium/Skeleton3D" index="7" unique_id=1872581482]
+material_override = ExtResource("3_smuyx")
+
+[node name="Knight_LegRight" parent="Rig_Medium/Skeleton3D" index="8" unique_id=1947393097]
+material_override = ExtResource("3_smuyx")
+
+[node name="HeadSlot" parent="Rig_Medium/Skeleton3D" index="9" unique_id=323676369]
+transform = Transform3D(0.9997204, -1.4014349e-09, 0.023646597, 1.3934147e-09, 0.99999994, 3.5568634e-10, -0.023646597, -3.226374e-10, 0.9997204, -4.3038546e-09, 1.2278259, 1.5739471e-15)
+
+[node name="RightHandSlot" parent="Rig_Medium/Skeleton3D" index="10" unique_id=323862737]
+transform = Transform3D(3.648616e-07, -0.14989449, -0.9887014, -0.99999905, 8.940687e-08, -1.1445584e-07, -3.0008258e-07, 0.98870146, -0.1498947, -0.49106094, 0.6410296, 0.1065954)
+
+[node name="LeftHandSlot" parent="Rig_Medium/Skeleton3D" index="11" unique_id=1939397805]
+transform = Transform3D(5.3484918e-08, 0.262863, 0.9648325, 0.99999917, 5.960457e-08, 3.9218364e-07, 3.3326728e-07, 0.9648325, -0.26286295, 0.5077683, 0.6367051, -0.018521175)
+
+[node name="BackSlot" parent="Rig_Medium/Skeleton3D" index="12" unique_id=1088114800]
+transform = Transform3D(0.9962748, -5.1496167e-09, 0.08623532, 5.1304343e-09, 0.99999994, 4.4407705e-10, -0.08623532, 1.8800718e-15, 0.9962748, -2.9196552e-09, 0.9590293, 1.0685902e-15)
+
+[node name="Camera3D" type="Camera3D" parent="." index="1" unique_id=1275510468]
+transform = Transform3D(-0.99802893, 0, -0.06275572, 0, 1, 0, 0.06275572, 0, -0.99802893, 0, 1.2726556, -2.0118573)
